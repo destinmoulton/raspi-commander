@@ -4,6 +4,8 @@ from remi import start, App
 from ScriptBox import ScriptBox
 from ServicesBox import ServicesBox
 
+from config import IP
+
 
 class MyApp(App):
     def __init__(self, *args):
@@ -25,7 +27,7 @@ class MyApp(App):
 
 # starts the webserver
 start(MyApp,
-      address='127.0.0.1',
+      address=IP,
       port=9090,
       enable_file_cache=False,
       update_interval=0.1)
