@@ -5,7 +5,7 @@ import subprocess
 class SystemCtl:
     def is_active(self, service_name):
         """Return True if service is running"""
-        cmd = ['systemctl', 'status', service_name]
+        cmd = ['systemctl', 'status', service_name + ".service"]
 
         result = subprocess.check_output(cmd)
         output = result.decode('utf8')
