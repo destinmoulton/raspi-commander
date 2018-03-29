@@ -1,8 +1,6 @@
 import sys
 import subprocess
 
-from config import SUDO_PASSWORD
-
 
 class SystemCtl:
     def is_active(self, service_name):
