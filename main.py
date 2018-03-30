@@ -9,9 +9,9 @@ from StdoutBox import StdoutBox
 from config import IP
 
 
-class MyApp(App):
+class RaspiCommander(App):
     def __init__(self, *args):
-        super(MyApp, self).__init__(*args)
+        super(RaspiCommander, self).__init__(*args)
 
     def main(self):
         self.stdoutbox = StdoutBox()
@@ -50,7 +50,7 @@ class MyApp(App):
 
 
 # starts the webserver
-start(MyApp,
+start(RaspiCommander,
       address=IP,
       port=9090,
       enable_file_cache=False,
