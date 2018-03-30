@@ -1,11 +1,17 @@
+import json
 import os
 import remi.gui as gui
 import subprocess
+from pprint import pprint
 
 from config import SCRIPTS_PATH
 
 
 class ScriptBox:
+
+    def __init__(self, stdoutbox):
+        self.stdoutbox = stdoutbox
+
     def build_script_box(self):
         bt_refresh = gui.Button('Refresh Script List')
         bt_refresh.style['padding'] = "5px"
@@ -45,18 +51,30 @@ class ScriptBox:
         '''
         self.refresh_scripts_table()
 
-    def on_click_run(self, widget, script_path):
+    def on_click_run(self, widget, script):
         '''When a script in the table is clicked
         '''
 
+        if type(script["cmds"][0]) is str:
+            self._run_cmd(script["cmds"][0])
+        else:
+            for cmd in script["cmds"]:
+                self._run_cmd(cmd)
+
         # Update the label
-        self.lb_lastrun_script.set_text(script_path)
+        self.lb_lastrun_script.set_text(script["name"])
+
+    def _run_cmd(self, cmd):
+        output = subprocess.check_output(cmd, universal_newlines=True)
+        self.stdoutbox.append(output)
 
     def refresh_scripts_table(self):
         '''Refresh the scripts table
         '''
 
-        scripts = self._get_script_paths()
+        script_paths = self._get_script_paths()
+        scripts = self._parse_scripts(script_paths)
+
         num_rows = len(scripts)
         self.vbox_scripts_table.empty()
         self.vbox_scripts_table.set_row_count(num_rows)
@@ -72,7 +90,20 @@ class ScriptBox:
 
             path_col = self.vbox_scripts_table.item_at(script_index, 1)
             path_col.style['padding'] = "4px"
-            path_col.set_text(script)
+            path_col.set_text(script['name'])
+
+    def _parse_scripts(self, paths):
+        scripts = []
+        for path in paths:
+            decoded = self._decode_script(path)
+            scripts.append(decoded)
+        return scripts
+
+    def _decode_script(self, path):
+        f = open(path, mode="r")
+        contents = f.read()
+        f.close()
+        return json.loads(contents)
 
     def _get_script_paths(self):
         scripts = []

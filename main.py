@@ -4,6 +4,7 @@ from remi import start, App
 from IPBox import IPBox
 from ScriptBox import ScriptBox
 from ServicesBox import ServicesBox
+from StdoutBox import StdoutBox
 
 from config import IP
 
@@ -13,10 +14,19 @@ class MyApp(App):
         super(MyApp, self).__init__(*args)
 
     def main(self):
-        main_container = gui.HBox()
+        self.stdoutbox = StdoutBox()
+        vbox_main = gui.VBox()
 
-        main_container.style['margin'] = "20px"
-        main_container.style['align-items'] = "left"
+        vbox_main.append(self._build_middle_box())
+        vbox_main.append(self.stdoutbox.build_stdout_box())
+
+        return vbox_main
+
+    def _build_middle_box(self):
+        middle_container = gui.HBox()
+
+        middle_container.style['margin'] = "20px"
+        middle_container.style['align-items'] = "left"
 
         vbox_left = gui.VBox()
 
@@ -24,18 +34,19 @@ class MyApp(App):
         vbox_left.append(ipbox.build_ip_box())
         ipbox.refresh_ip()
 
-        servicesbox = ServicesBox()
+        servicesbox = ServicesBox(self.stdoutbox)
         vbox_left.append(servicesbox.build_services_box())
         servicesbox.refresh_service_table()
 
-        main_container.append(vbox_left)
+        middle_container.append(vbox_left)
 
-        scriptbox = ScriptBox()
-        main_container.append(scriptbox.build_script_box())
+        scriptbox = ScriptBox(self.stdoutbox)
+        middle_container.append(scriptbox.build_script_box())
         scriptbox.refresh_scripts_table()
 
         # returning the root widget
-        return main_container
+        return middle_container
+
 
 
 # starts the webserver

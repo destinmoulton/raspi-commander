@@ -8,8 +8,8 @@ from SystemCtl import SystemCtl
 
 
 class ServicesBox:
-    def __init__(self):
-        self.systemctl = SystemCtl()
+    def __init__(self, stdoutbox):
+        self.systemctl = SystemCtl(stdoutbox)
 
     def build_services_box(self):
         bt_refresh = gui.Button('Refresh Services')

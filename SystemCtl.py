@@ -3,12 +3,16 @@ import subprocess
 
 
 class SystemCtl:
+    def __init__(self, stdoutbox):
+        self.stdoutbox = stdoutbox
+
     def is_active(self, service_name):
         """Return True if service is running"""
         cmd = ['systemctl', 'status', service_name + ".service"]
 
         try:
             output = subprocess.check_output(cmd, universal_newlines=True)
+            self.stdoutbox.append(output)
             for line in output.split("\n"):
                 if 'Active:' in line:
                     if '(running)' in line:
@@ -19,4 +23,5 @@ class SystemCtl:
 
     def run(self, service_name, command):
         cmd = ['sudo', 'systemctl', command, service_name]
-        subprocess.check_output(cmd)
+        output = subprocess.check_output(cmd, universal_newlines=True)
+        self.stdoutbox.append(output)
