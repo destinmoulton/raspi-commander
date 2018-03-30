@@ -1,6 +1,7 @@
 import remi.gui as gui
 from remi import start, App
 
+from IPBox import IPBox
 from ScriptBox import ScriptBox
 from ServicesBox import ServicesBox
 
@@ -17,9 +18,17 @@ class MyApp(App):
         main_container.style['margin'] = "20px"
         main_container.style['align-items'] = "left"
 
+        vbox_left = gui.VBox()
+
+        ipbox = IPBox()
+        vbox_left.append(ipbox.build_ip_box())
+        ipbox.refresh_ip()
+
         servicesbox = ServicesBox()
-        main_container.append(servicesbox.build_services_box())
+        vbox_left.append(servicesbox.build_services_box())
         servicesbox.refresh_service_table()
+
+        main_container.append(vbox_left)
 
         scriptbox = ScriptBox()
         main_container.append(scriptbox.build_script_box())
