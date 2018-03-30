@@ -8,8 +8,7 @@ class SystemCtl:
         cmd = ['systemctl', 'status', service_name + ".service"]
 
         try:
-            result = subprocess.check_output(cmd)
-            output = result.decode('utf8')
+            output = subprocess.check_output(cmd, universal_newlines=True)
             for line in output.split("\n"):
                 if 'Active:' in line:
                     if '(running)' in line:
