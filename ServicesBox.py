@@ -28,6 +28,9 @@ class ServicesBox:
 
         vbox_services_section = gui.VBox(width=300)
         vbox_services_section.style['align-items'] = "left"
+        vbox_services_section.style['border'] = "2px solid gray"
+        vbox_services_section.style['padding'] = "10px"
+        vbox_services_section.style['margin'] = "10px"
 
         vbox_services_section.append(hbox_services_menu)
         vbox_services_section.append(self.vbox_services_table)
@@ -37,27 +40,27 @@ class ServicesBox:
     def on_refresh_services(self, widget):
         '''When the "Refresh Script List" button is clicked
         '''
-        self._refresh_service_table()
+        self.refresh_service_table()
 
     def on_click_start_service(self, widget, service):
         """Start a service"""
 
         self.systemctl.run(service, "start")
-        self._refresh_service_table()
+        self.refresh_service_table()
 
     def on_click_stop_service(self, widget, service):
         """Stop a service"""
 
         self.systemctl.run(service, "stop")
-        self._refresh_service_table()
+        self.refresh_service_table()
 
     def on_click_restart_service(self, widget,  service):
         """Restart a service"""
 
         self.systemctl.run(service, "restart")
-        self._refresh_service_table()
+        self.refresh_service_table()
 
-    def _refresh_service_table(self):
+    def refresh_service_table(self):
         """Refresh the services"""
 
         service_statuses = self._get_services_status()
@@ -96,6 +99,7 @@ class ServicesBox:
 
             lb_status = gui.Label(status_text)
             lb_status.style['color'] = status_color
+            lb_status.style['padding'] = "4px"
             status_col = self.vbox_services_table.item_at(service_index, 1)
             status_col.append(lb_status)
 

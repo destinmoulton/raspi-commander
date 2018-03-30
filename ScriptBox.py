@@ -30,6 +30,9 @@ class ScriptBox:
 
         vbox_script_section = gui.VBox(width=600)
         vbox_script_section.style['align-items'] = "left"
+        vbox_script_section.style['border'] = "2px solid gray"
+        vbox_script_section.style['padding'] = "10px"
+        vbox_script_section.style['margin'] = "10px"
 
         vbox_script_section.append(hbox_script_menu)
         vbox_script_section.append(hbox_lastrun)
@@ -40,7 +43,7 @@ class ScriptBox:
     def on_refresh_scripts(self, widget):
         '''When the "Refresh Script List" button is clicked
         '''
-        self._refresh_script_table()
+        self.refresh_scripts_table()
 
     def on_click_run(self, widget, script_path):
         '''When a script in the table is clicked
@@ -49,7 +52,7 @@ class ScriptBox:
         # Update the label
         self.lb_lastrun_script.set_text(script_path)
 
-    def _refresh_script_table(self):
+    def refresh_scripts_table(self):
         '''Refresh the scripts table
         '''
 
