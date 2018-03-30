@@ -47,30 +47,31 @@ class ScriptBox:
         return vbox_script_section
 
     def on_refresh_scripts(self, widget):
-        '''When the "Refresh Script List" button is clicked
-        '''
+        """When the "Refresh Script List" button is clicked"""
         self.refresh_scripts_table()
 
     def on_click_run(self, widget, script):
-        '''When a script in the table is clicked
-        '''
+        """When a script in the table is clicked"""
 
-        if type(script["cmds"][0]) is str:
-            self._run_cmd(script["cmds"][0])
-        else:
+        if script["type"] == "json":
+            # Run a list of commands, ie. ['ls', '/path']
             for cmd in script["cmds"]:
                 self._run_cmd(cmd)
+        elif script["type"] == "bash":
+            # Run a bash file
+            cmd = ["/bin/bash", script["path"]]
+            self._run_cmd(cmd)
 
         # Update the label
         self.lb_lastrun_script.set_text(script["name"])
 
     def _run_cmd(self, cmd):
+        """Run a command"""
         output = subprocess.check_output(cmd, universal_newlines=True)
         self.stdoutbox.append(output)
 
     def refresh_scripts_table(self):
-        '''Refresh the scripts table
-        '''
+        """Refresh the scripts table"""
 
         script_paths = self._get_script_paths()
         scripts = self._parse_scripts(script_paths)
@@ -93,13 +94,25 @@ class ScriptBox:
             path_col.set_text(script['name'])
 
     def _parse_scripts(self, paths):
+        """Parse the script paths"""
         scripts = []
         for path in paths:
-            decoded = self._decode_script(path)
-            scripts.append(decoded)
+            filename, ext = os.path.splitext(path)
+
+            if ext == ".json":
+                decoded = self._decode_json_script(path)
+                decoded["type"] = "json"
+                scripts.append(decoded)
+            elif ext == ".sh":
+                script = {
+                    "type": "bash",
+                    "name": os.path.basename(path),
+                    "path": path
+                }
+                scripts.append(script)
         return scripts
 
-    def _decode_script(self, path):
+    def _decode_json_script(self, path):
         f = open(path, mode="r")
         contents = f.read()
         f.close()
