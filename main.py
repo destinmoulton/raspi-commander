@@ -2,6 +2,7 @@ import remi.gui as gui
 from remi import start, App
 
 from IPBox import IPBox
+from RefreshBox import RefreshBox
 from ScriptBox import ScriptBox
 from ServicesBox import ServicesBox
 from StdoutBox import StdoutBox
@@ -15,34 +16,37 @@ class RaspiCommander(App):
 
     def main(self):
         self.stdoutbox = StdoutBox()
-        vbox_main = gui.VBox()
+        self.ipbox = IPBox()
+        self.servicesbox = ServicesBox(self.stdoutbox)
+        self.scriptbox = ScriptBox(self.stdoutbox)
+        self.refreshbox = RefreshBox(
+            self.servicesbox, self.ipbox, self.scriptbox)
 
+        vbox_main = gui.VBox()
+        vbox_main.append(self.refreshbox.build_refresh_box())
         vbox_main.append(self._build_middle_box())
         vbox_main.append(self.stdoutbox.build_stdout_box())
 
         return vbox_main
 
     def _build_middle_box(self):
-        middle_container = gui.HBox()
 
+        middle_container = gui.HBox()
         middle_container.style['margin'] = "20px"
         middle_container.style['align-items'] = "left"
 
         vbox_left = gui.VBox()
 
-        ipbox = IPBox()
-        vbox_left.append(ipbox.build_ip_box())
-        ipbox.refresh_ip()
+        vbox_left.append(self.ipbox.build_ip_box())
+        self.ipbox.refresh_ip()
 
-        servicesbox = ServicesBox(self.stdoutbox)
-        vbox_left.append(servicesbox.build_services_box())
-        servicesbox.refresh_service_table()
+        vbox_left.append(self.servicesbox.build_services_box())
+        self.servicesbox.refresh_service_table()
 
         middle_container.append(vbox_left)
 
-        scriptbox = ScriptBox(self.stdoutbox)
-        middle_container.append(scriptbox.build_script_box())
-        scriptbox.refresh_scripts_table()
+        middle_container.append(self.scriptbox.build_script_box())
+        self.scriptbox.refresh_scripts_table()
 
         # returning the root widget
         return middle_container

@@ -13,13 +13,6 @@ class ScriptBox:
         self.stdoutbox = stdoutbox
 
     def build_script_box(self):
-        bt_refresh = gui.Button('Refresh Script List')
-        bt_refresh.style['padding'] = "5px"
-        bt_refresh.set_on_click_listener(self.on_refresh_scripts)
-
-        hbox_script_menu = gui.HBox()
-        hbox_script_menu.style['padding'] = '5px'
-        hbox_script_menu.append(bt_refresh)
 
         lb_lastrun_title = gui.Label("Last Script:")
         lb_lastrun_title.style['font-weight'] = "bold"
@@ -40,7 +33,6 @@ class ScriptBox:
         vbox_script_section.style['padding'] = "10px"
         vbox_script_section.style['margin'] = "10px"
 
-        vbox_script_section.append(hbox_script_menu)
         vbox_script_section.append(hbox_lastrun)
         vbox_script_section.append(self.vbox_scripts_table)
 

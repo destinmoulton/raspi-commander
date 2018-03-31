@@ -5,10 +5,6 @@ import urllib.request
 
 class IPBox:
     def build_ip_box(self):
-        bt_refresh = gui.Button('Refresh IP Address')
-        bt_refresh.style['padding'] = "5px"
-        bt_refresh.set_on_click_listener(self.on_refresh_ip)
-
         lb_ip_title = gui.Label("External IP:")
         lb_ip_title.style['font-weight'] = "bold"
 
@@ -25,7 +21,6 @@ class IPBox:
         vbox_ip_box.style['border'] = "2px solid gray"
         vbox_ip_box.style['padding'] = "10px"
         vbox_ip_box.style['margin'] = "10px"
-        vbox_ip_box.append(bt_refresh)
         vbox_ip_box.append(hbox_ip)
 
         return vbox_ip_box

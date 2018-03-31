@@ -12,14 +12,6 @@ class ServicesBox:
         self.systemctl = SystemCtl(stdoutbox)
 
     def build_services_box(self):
-        bt_refresh = gui.Button('Refresh Services')
-        bt_refresh.style['padding'] = "5px"
-        bt_refresh.set_on_click_listener(self.on_refresh_services)
-
-        hbox_services_menu = gui.HBox()
-        hbox_services_menu.style['padding'] = '5px'
-        hbox_services_menu.append(bt_refresh)
-
         lb_lastrun_title = gui.Label("Last Script:")
         lb_lastrun_title.style['font-weight'] = "bold"
         self.lb_lastrun_script = gui.Label("")
@@ -32,7 +24,6 @@ class ServicesBox:
         vbox_services_section.style['padding'] = "10px"
         vbox_services_section.style['margin'] = "10px"
 
-        vbox_services_section.append(hbox_services_menu)
         vbox_services_section.append(self.vbox_services_table)
 
         return vbox_services_section

@@ -6,6 +6,7 @@ class StdoutBox:
         self.stdouts = []
         self.lst_termout = gui.ListView()
         self.lst_termout.style['border'] = "1px solid green"
+        self.lst_termout.style['height'] = "300px"
 
     def append(self, data):
         self.stdouts.append(data)
