@@ -1,4 +1,13 @@
 ServicesBoxStyles = {
+    "lastrun_lb_title": {
+        "font-weight": "bold"
+    },
+    "services_section": {
+        "align-items": "left",
+        "border": "2px solid gray",
+        "padding": "10px",
+        "margin": "10px"
+    },
     "start_bt_style": {
         "background-color": "green",
         "padding": "4px"
