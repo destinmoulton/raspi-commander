@@ -5,8 +5,8 @@ import urllib.request
 
 class IPBox:
     def build_ip_box(self):
-        lb_ip_title = gui.Label("External IP:")
-        lb_ip_title.style['font-weight'] = "bold"
+        style_ip_title = {"font-weight": "bold", "padding-right": "4px"}
+        lb_ip_title = gui.Label("External IP:", style=style_ip_title)
 
         self.lb_ip_addr = gui.Label("")
         self.lb_ip_addr.style['color'] = "purple"

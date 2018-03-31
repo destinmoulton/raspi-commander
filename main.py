@@ -31,9 +31,12 @@ class RaspiCommander(App):
 
     def _build_middle_box(self):
 
-        middle_container = gui.HBox()
-        middle_container.style['margin'] = "20px"
-        middle_container.style['align-items'] = "left"
+        middle_style = {
+            "margin": "20px",
+            "align-items": "left"
+
+        }
+        middle_container = gui.HBox(style=middle_style)
 
         vbox_left = gui.VBox()
 

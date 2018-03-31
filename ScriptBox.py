@@ -14,24 +14,30 @@ class ScriptBox:
 
     def build_script_box(self):
 
+        lastrun_title_style = {
+            "font-weight": "bold"
+        }
         lb_lastrun_title = gui.Label("Last Script:")
-        lb_lastrun_title.style['font-weight'] = "bold"
-        self.lb_lastrun_script = gui.Label("")
+        self.lb_lastrun_script = gui.Label("", style=lastrun_title_style)
 
-        hbox_lastrun = gui.HBox(width=500)
-        hbox_lastrun.style['padding-left'] = "10px"
-        hbox_lastrun.style['border-bottom'] = "2px solid black"
-        hbox_lastrun.style['text-align'] = "left"
+        lastrun_style = {
+            'padding-left': "10px",
+            'border-bottom': "2px solid black",
+            'text-align': "left"
+        }
+        hbox_lastrun = gui.HBox(width=500, style=lastrun_style)
         hbox_lastrun.append(lb_lastrun_title)
         hbox_lastrun.append(self.lb_lastrun_script)
 
         self.vbox_scripts_table = gui.TableWidget(0, 2, use_title=False)
 
-        vbox_script_section = gui.VBox(width=600)
-        vbox_script_section.style['align-items'] = "left"
-        vbox_script_section.style['border'] = "2px solid gray"
-        vbox_script_section.style['padding'] = "10px"
-        vbox_script_section.style['margin'] = "10px"
+        script_section_style = {
+            'align-items': "left",
+            'border': "2px solid gray",
+            'padding': "10px",
+            'margin': "10px"
+        }
+        vbox_script_section = gui.VBox(width=600, style=script_section_style)
 
         vbox_script_section.append(hbox_lastrun)
         vbox_script_section.append(self.vbox_scripts_table)
@@ -72,10 +78,13 @@ class ScriptBox:
         self.vbox_scripts_table.empty()
         self.vbox_scripts_table.set_row_count(num_rows)
 
+        run_style = {
+            'background-color': "green",
+            'padding': "4px"
+        }
+
         for script_index, script in enumerate(scripts):
-            bt_run = gui.Button("Run")
-            bt_run.style['background-color'] = "green"
-            bt_run.style['padding'] = "4px"
+            bt_run = gui.Button("Run", style=run_style)
             bt_run.set_on_click_listener(self.on_click_run, script)
 
             bt_col = self.vbox_scripts_table.item_at(script_index, 0)
