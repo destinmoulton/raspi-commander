@@ -5,6 +5,7 @@ import subprocess
 from pprint import pprint
 
 from config import SCRIPTS_PATH
+from Styles import ScriptBoxStyles
 
 
 class ScriptBox:
@@ -14,30 +15,19 @@ class ScriptBox:
 
     def build_script_box(self):
 
-        lastrun_title_style = {
-            "font-weight": "bold"
-        }
         lb_lastrun_title = gui.Label("Last Script:")
-        self.lb_lastrun_script = gui.Label("", style=lastrun_title_style)
+        self.lb_lastrun_script = gui.Label(
+            "", style=ScriptBoxStyles["lastrun_lb_title"])
 
-        lastrun_style = {
-            'padding-left': "10px",
-            'border-bottom': "2px solid black",
-            'text-align': "left"
-        }
-        hbox_lastrun = gui.HBox(width=500, style=lastrun_style)
+        hbox_lastrun = gui.HBox(
+            width=500, style=ScriptBoxStyles["lastrun_hbox_style"])
         hbox_lastrun.append(lb_lastrun_title)
         hbox_lastrun.append(self.lb_lastrun_script)
 
         self.vbox_scripts_table = gui.TableWidget(0, 2, use_title=False)
 
-        script_section_style = {
-            'align-items': "left",
-            'border': "2px solid gray",
-            'padding': "10px",
-            'margin': "10px"
-        }
-        vbox_script_section = gui.VBox(width=600, style=script_section_style)
+        vbox_script_section = gui.VBox(
+            width=600, style=ScriptBoxStyles["script_section"])
 
         vbox_script_section.append(hbox_lastrun)
         vbox_script_section.append(self.vbox_scripts_table)
@@ -78,13 +68,8 @@ class ScriptBox:
         self.vbox_scripts_table.empty()
         self.vbox_scripts_table.set_row_count(num_rows)
 
-        run_style = {
-            'background-color': "green",
-            'padding': "4px"
-        }
-
         for script_index, script in enumerate(scripts):
-            bt_run = gui.Button("Run", style=run_style)
+            bt_run = gui.Button("Run", style=ScriptBoxStyles["run_bt"])
             bt_run.set_on_click_listener(self.on_click_run, script)
 
             bt_col = self.vbox_scripts_table.item_at(script_index, 0)
