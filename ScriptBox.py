@@ -19,15 +19,16 @@ class ScriptBox:
         self.lb_lastrun_script = gui.Label(
             "", style=ScriptBoxStyles["lastrun_lb_title"])
 
-        hbox_lastrun = gui.HBox(
-            width=500, style=ScriptBoxStyles["lastrun_hbox_style"])
+        hbox_lastrun = gui.HBox(style=ScriptBoxStyles["lastrun_hbox_style"])
+        hbox_lastrun.style["align-items"] = "left"
+
         hbox_lastrun.append(lb_lastrun_title)
         hbox_lastrun.append(self.lb_lastrun_script)
 
         self.vbox_scripts_table = gui.TableWidget(0, 2, use_title=False)
 
-        vbox_script_section = gui.VBox(
-            width=600, style=ScriptBoxStyles["script_section"])
+        vbox_script_section = gui.VBox(style=ScriptBoxStyles["script_section"])
+        vbox_script_section.style["align-items"] = "left"
 
         vbox_script_section.append(hbox_lastrun)
         vbox_script_section.append(self.vbox_scripts_table)

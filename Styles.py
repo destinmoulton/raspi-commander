@@ -1,22 +1,43 @@
 
+RefreshBoxStyles = {
+    "refresh_bt_gen": {
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "margin": "5px",
+        "border-radius": "3px",
+        "background-color": "gray",
+        "font-weight": "bold"
+    },
+    "refresh_bt_all": {
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "margin": "5px",
+        "border-radius": "3px",
+        "background-color": "green",
+        "font-weight": "bold"
+    }
+
+}
+
 ScriptBoxStyles = {
     "lastrun_lb_title": {
         "font-weight": "bold"
     },
     "lastrun_hbox_style": {
-        'padding-left': "10px",
-        'border-bottom': "2px solid black",
-        'text-align': "left"
+        "padding-left": "10px",
+        "border-bottom": "2px solid black",
+        "text-align": "left",
+        "width": "90%"
     },
     "script_section": {
-        'align-items': "left",
-        'border': "2px solid gray",
-        'padding': "10px",
-        'margin': "10px"
+        "border": "2px solid gray",
+        "padding": "10px",
+        "margin": "10px",
+        "width": "600px"
     },
     "run_bt": {
-        'background-color': "green",
-        'padding': "4px"
+        "background-color": "green",
+        "padding": "4px"
     }
 }
 
