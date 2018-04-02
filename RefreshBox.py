@@ -7,23 +7,25 @@ class RefreshBox:
     def __init__(self):
         self.button_handlers = []
 
-        self.hbox_bt = gui.HBox()
+        self.hbox_top = gui.HBox(style=RefreshBoxStyles["container"])
 
+        title = gui.Label("RaspiCommander", style=RefreshBoxStyles["title"])
         bt_refresh_all = gui.Button(
             "Refresh All", style=RefreshBoxStyles["refresh_bt_all"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
 
-        self.hbox_bt.append(bt_refresh_all)
+        self.hbox_top.append(title)
+        self.hbox_top.append(bt_refresh_all)
 
     def build_refresh_box(self):
-        return self.hbox_bt
+        return self.hbox_top
 
     def add_button(self, title, handler):
         bt = gui.Button(title, style=RefreshBoxStyles["refresh_bt_gen"])
         # The passed handlers avoid the widget parameter (for callability)
         bt.set_on_click_listener(self._on_click_gen_refresh, handler)
 
-        self.hbox_bt.append(bt)
+        self.hbox_top.append(bt)
 
         self.button_handlers.append(handler)
 

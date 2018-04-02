@@ -29,6 +29,9 @@ LastRefreshedStyles = {
 }
 
 RefreshBoxStyles = {
+    "container": {
+        "width": "945px"
+    },
     "refresh_bt_gen": {
         "padding-left": "10px",
         "padding-right": "10px",
@@ -44,6 +47,10 @@ RefreshBoxStyles = {
         "border-radius": "3px",
         "background-color": "green",
         "font-weight": "bold"
+    },
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.4em"
     }
 
 }
