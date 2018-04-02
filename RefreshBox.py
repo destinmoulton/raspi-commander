@@ -25,5 +25,8 @@ class RefreshBox:
         self.button_handlers.append(handler)
 
     def on_refresh_all(self, widget):
+        self.refresh_all()
+
+    def refresh_all(self):
         for handler in self.button_handlers:
-            handler(widget)
+            handler()
