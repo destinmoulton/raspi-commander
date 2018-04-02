@@ -138,22 +138,35 @@ ServicesBoxStyles = {
 }
 
 StdoutBoxStyles = {
-
+    "clear_button": {
+        "height": "20px",
+        "padding-left": "4px",
+        "padding-right": "4px",
+        "border-radius": "4px",
+        "line-height": "20px"
+    },
     "list": {
         "border": "1px solid black",
-        "height": "300px"
+        "height": "300px",
+        "width": "95%"
     },
     "stdout_section": {
         "align-items": "left",
         "border": "2px solid gray",
         "padding": "10px",
-        "margin": "10px"
+        "width": "945px"
     },
     "title": {
         "font-weight": "bold",
         "font-size": "1.3em",
         "padding": "5px",
         "text-align": "left",
-        "width": "100%"
+    },
+    "top_container": {
+        "width": "900px",
+        "text-align": "left",
+        "align-items": "left",
+
+        "justify-content": "left"
     }
 }
