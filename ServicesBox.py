@@ -26,7 +26,7 @@ class ServicesBox:
 
         return vbox_services_section
 
-    def on_refresh_services(self, widget):
+    def on_refresh_services(self):
         """When the "Refresh Script List" button is clicked
         """
         self.refresh_service_table()

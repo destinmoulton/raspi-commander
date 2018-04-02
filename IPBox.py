@@ -25,7 +25,7 @@ class IPBox:
 
         return vbox_ip_box
 
-    def on_refresh_ip(self, widget):
+    def on_refresh_ip(self):
         self.refresh_ip()
 
     def refresh_ip(self):
