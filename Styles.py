@@ -29,15 +29,24 @@ ScriptBoxStyles = {
         "text-align": "left",
         "width": "90%"
     },
+
+    "run_bt": {
+        "background-color": "green",
+        "padding": "4px"
+    },
     "script_section": {
         "border": "2px solid gray",
         "padding": "10px",
         "margin": "10px",
         "width": "600px"
     },
-    "run_bt": {
-        "background-color": "green",
-        "padding": "4px"
+    "table": {
+        "width": "100%"
+    },
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.3em",
+        "padding": "5px"
     }
 }
 
