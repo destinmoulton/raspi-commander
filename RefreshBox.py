@@ -21,16 +21,20 @@ class RefreshBox:
     def add_button(self, title, handler):
         bt = gui.Button(title, style=RefreshBoxStyles["refresh_bt_gen"])
         self.hbox_bt.append(bt)
+
+        # The passed handlers avoid the widget parameter (for callability)
         self.hbox_bt.set_on_click_listener(self._on_click_gen_refresh, handler)
 
         self.button_handlers.append(handler)
 
     def _on_click_gen_refresh(self, widget, handler):
+        """Call the refresh handler (sans widget)"""
         handler()
 
     def on_refresh_all(self, widget):
         self.refresh_all()
 
     def refresh_all(self):
+        """Run all of the refresh handlers"""
         for handler in self.button_handlers:
             handler()
