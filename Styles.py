@@ -78,11 +78,32 @@ ServicesBoxStyles = {
         "padding": "4px"
     },
     "status_col_style_off": {
+        "font-weight": "bold",
         "padding": "4px",
         "color": "red"
     },
     "status_col_style_on": {
+        "font-weight": "bold",
         "padding": "4px",
         "color": "green"
+    },
+    "table": {
+        "width": "100%"
+    },
+    "table_bt_col": {
+        "text-align": "left",
+        "width": "130px"
+    },
+    "table_service_col": {
+        "text-align": "left",
+        "width": "130px",
+        "padding-left": "5px"
+    },
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.3em",
+        "padding": "5px",
+        "text-align": "left",
+        "width": "100%"
     }
 }

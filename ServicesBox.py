@@ -13,15 +13,15 @@ class ServicesBox:
         self.systemctl = SystemCtl(stdoutbox)
 
     def build_services_box(self):
-        lb_lastrun_title = gui.Label(
-            "Last Script:", style=ServicesBoxStyles["lastrun_lb_title"])
-        self.lb_lastrun_script = gui.Label("")
+        lb_title = gui.Label("Services", style=ServicesBoxStyles["title"])
 
-        self.vbox_services_table = gui.TableWidget(0, 3, use_title=False)
+        self.vbox_services_table = gui.TableWidget(
+            0, 3, use_title=False, style=ServicesBoxStyles["table"])
 
         vbox_services_section = gui.VBox(
             width=300, style=ServicesBoxStyles["services_section"])
 
+        vbox_services_section.append(lb_title)
         vbox_services_section.append(self.vbox_services_table)
 
         return vbox_services_section
@@ -73,6 +73,7 @@ class ServicesBox:
                 self.on_click_restart_service, service)
 
             bt_col = self.vbox_services_table.item_at(service_index, 0)
+            bt_col.set_style(ServicesBoxStyles["table_bt_col"])
             bt_col.append(bt_start)
             bt_col.append(bt_stop)
             bt_col.append(bt_restart)
@@ -88,7 +89,7 @@ class ServicesBox:
             status_col.append(lb_status)
 
             path_col = self.vbox_services_table.item_at(service_index, 2)
-            path_col.style["padding"] = "4px"
+            path_col.set_style(ServicesBoxStyles["table_service_col"])
             path_col.set_text(service)
 
     def _get_services_status(self):
