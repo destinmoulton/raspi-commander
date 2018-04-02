@@ -20,10 +20,10 @@ class RefreshBox:
 
     def add_button(self, title, handler):
         bt = gui.Button(title, style=RefreshBoxStyles["refresh_bt_gen"])
-        self.hbox_bt.append(bt)
-
         # The passed handlers avoid the widget parameter (for callability)
-        self.hbox_bt.set_on_click_listener(self._on_click_gen_refresh, handler)
+        bt.set_on_click_listener(self._on_click_gen_refresh, handler)
+
+        self.hbox_bt.append(bt)
 
         self.button_handlers.append(handler)
 
