@@ -4,40 +4,26 @@ from Styles import RefreshBoxStyles
 
 
 class RefreshBox:
-    def __init__(self, servicesbox, ipbox, scriptbox):
-        self.servicesbox = servicesbox
-        self.ipbox = ipbox
-        self.scriptbox = scriptbox
+    def __init__(self):
+        self.button_handlers = []
 
-    def build_refresh_box(self):
-        hbox_bt = gui.HBox()
+        self.hbox_bt = gui.HBox()
 
         bt_refresh_all = gui.Button(
             "Refresh All", style=RefreshBoxStyles["refresh_bt_all"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
 
-        bt_refresh_ip = gui.Button(
-            'Refresh IP Address', style=RefreshBoxStyles["refresh_bt_gen"])
-        bt_refresh_ip.set_on_click_listener(self.ipbox.on_refresh_ip)
+        self.hbox_bt.append(bt_refresh_all)
 
-        bt_refresh_scripts = gui.Button(
-            'Refresh Script List', style=RefreshBoxStyles["refresh_bt_gen"])
-        bt_refresh_scripts.set_on_click_listener(
-            self.scriptbox.on_refresh_scripts)
+    def build_refresh_box(self):
+        return self.hbox_bt
 
-        bt_refresh_services = gui.Button(
-            'Refresh Services', style=RefreshBoxStyles["refresh_bt_gen"])
-        bt_refresh_services.set_on_click_listener(
-            self.servicesbox.on_refresh_services)
+    def add_button(self, title, handler):
+        bt = gui.Button(title, style=RefreshBoxStyles["refresh_bt_gen"])
+        self.hbox_bt.append(bt)
 
-        hbox_bt.append(bt_refresh_all)
-        hbox_bt.append(bt_refresh_ip)
-        hbox_bt.append(bt_refresh_services)
-        hbox_bt.append(bt_refresh_scripts)
-
-        return hbox_bt
+        self.button_handlers.append(handler)
 
     def on_refresh_all(self, widget):
-        self.ipbox.on_refresh_ip(widget)
-        self.scriptbox.on_refresh_scripts(widget)
-        self.servicesbox.on_refresh_services(widget)
+        for handler in self.button_handlers:
+            handler(widget)
