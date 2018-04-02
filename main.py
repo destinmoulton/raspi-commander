@@ -16,10 +16,11 @@ class RaspiCommander(App):
 
     def main(self):
         self.stdoutbox = StdoutBox()
+
+        self.refreshbox = RefreshBox()
         self.ipbox = IPBox()
         self.servicesbox = ServicesBox(self.stdoutbox)
-        self.scriptbox = ScriptBox(self.stdoutbox)
-        self.refreshbox = RefreshBox()
+        self.scriptbox = ScriptBox(self.stdoutbox, self.refreshbox.refresh_all)
 
         self.refreshbox.add_button(
             "Refresh IP Address", self.ipbox.on_refresh_ip)
