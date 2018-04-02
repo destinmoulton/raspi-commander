@@ -10,8 +10,9 @@ from Styles import ScriptBoxStyles
 
 class ScriptBox:
 
-    def __init__(self, stdoutbox):
+    def __init__(self, stdoutbox, refresh_all_handler):
         self.stdoutbox = stdoutbox
+        self.refresh_all_handler = refresh_all_handler
 
     def build_script_box(self):
 
@@ -54,6 +55,9 @@ class ScriptBox:
             # Run a bash file
             cmd = ["/bin/bash", script["path"]]
             self._run_cmd(cmd)
+
+        # Refresh all
+        self.refresh_all_handler
 
         # Update the label
         self.lb_lastrun_script.set_text(script["name"])
