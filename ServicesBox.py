@@ -4,6 +4,7 @@ import subprocess
 
 from config import SERVICES_TO_MONITOR
 
+from LastRefreshed import LastRefreshed
 from SystemCtl import SystemCtl
 from Styles import ServicesBoxStyles
 
@@ -11,6 +12,7 @@ from Styles import ServicesBoxStyles
 class ServicesBox:
     def __init__(self, stdoutbox):
         self.systemctl = SystemCtl(stdoutbox)
+        self.last_refreshed = LastRefreshed()
 
     def build_services_box(self):
         lb_title = gui.Label("Services", style=ServicesBoxStyles["title"])
@@ -18,11 +20,14 @@ class ServicesBox:
         self.vbox_services_table = gui.TableWidget(
             0, 3, use_title=False, style=ServicesBoxStyles["table"])
 
+        self.hbox_last_refreshed = gui.VBox()
+
         vbox_services_section = gui.VBox(
             width=300, style=ServicesBoxStyles["services_section"])
 
         vbox_services_section.append(lb_title)
         vbox_services_section.append(self.vbox_services_table)
+        vbox_services_section.append(self.hbox_last_refreshed)
 
         return vbox_services_section
 
@@ -49,6 +54,12 @@ class ServicesBox:
         self.systemctl.run(service, "restart")
         self.refresh_service_table()
 
+    def update_refresh_time(self):
+        # Update the refresh time
+        self.hbox_last_refreshed.empty()
+        self.hbox_last_refreshed.append(
+            self.last_refreshed.get_last_refreshed())
+
     def refresh_service_table(self):
         """Refresh the services"""
 
@@ -56,6 +67,8 @@ class ServicesBox:
         num_rows = len(service_statuses)
         self.vbox_services_table.empty()
         self.vbox_services_table.set_row_count(num_rows)
+
+        self.update_refresh_time()
 
         for service_index, (service, status) in enumerate(service_statuses):
             bt_start = gui.Button(
