@@ -43,6 +43,11 @@ ScriptBoxStyles = {
     "table": {
         "width": "100%"
     },
+    "table_script_col": {
+        "text-align": "left",
+        "width": "100%",
+        "padding-left": "5px"
+    },
     "title": {
         "font-weight": "bold",
         "font-size": "1.3em",

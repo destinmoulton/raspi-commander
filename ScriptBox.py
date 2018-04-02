@@ -81,7 +81,7 @@ class ScriptBox:
             bt_col.append(bt_run)
 
             path_col = self.vbox_scripts_table.item_at(script_index, 1)
-            path_col.style['padding'] = "4px"
+            path_col.set_style(ScriptBoxStyles["table_script_col"])
             path_col.set_text(script['name'])
 
     def _parse_scripts(self, paths):
