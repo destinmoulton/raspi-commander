@@ -1,4 +1,33 @@
 
+IPBoxStyles = {
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.3em",
+        "padding": "5px",
+        "width": "100%",
+        "text-align": "left"
+    },
+    "ipaddr": {
+        "font-weight": "bold",
+        "color": "purple"
+    },
+    "ipbox_box": {
+        "border": "2px solid gray",
+        "padding": "10px",
+        "margin": "10px",
+        "width": "300px",
+        "text-align": "left",
+        "align-items": "left"
+    },
+}
+
+LastRefreshedStyles = {
+    "text": {
+        "font-size": ".7em",
+        "font-style": "italic"
+    }
+}
+
 RefreshBoxStyles = {
     "refresh_bt_gen": {
         "padding-left": "10px",

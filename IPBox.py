@@ -3,31 +3,22 @@ import subprocess
 import urllib.request
 
 from LastRefreshed import LastRefreshed
+from Styles import IPBoxStyles
 
 
 class IPBox:
     def build_ip_box(self):
 
-        style_ip_title = {"font-weight": "bold", "padding-right": "4px"}
-        lb_ip_title = gui.Label("External IP:", style=style_ip_title)
+        lb_title = gui.Label("External IP Address", style=IPBoxStyles["title"])
 
-        self.lb_ip_addr = gui.Label("")
-        self.lb_ip_addr.style['color'] = "purple"
-
-        hbox_ip = gui.HBox()
-        hbox_ip.style['align-items'] = "left"
-        hbox_ip.append(lb_ip_title)
-        hbox_ip.append(self.lb_ip_addr)
+        self.lb_ip_addr = gui.Label("", style=IPBoxStyles["ipaddr"])
 
         self.lastrefreshed = LastRefreshed()
         self.hbox_last_refreshed = gui.VBox()
 
-        vbox_ip_box = gui.VBox(width=300)
-        vbox_ip_box.style['align-items'] = "left"
-        vbox_ip_box.style['border'] = "2px solid gray"
-        vbox_ip_box.style['padding'] = "10px"
-        vbox_ip_box.style['margin'] = "10px"
-        vbox_ip_box.append(hbox_ip)
+        vbox_ip_box = gui.VBox(style=IPBoxStyles["ipbox_box"])
+        vbox_ip_box.append(lb_title)
+        vbox_ip_box.append(self.lb_ip_addr)
         vbox_ip_box.append(self.hbox_last_refreshed)
 
         return vbox_ip_box
