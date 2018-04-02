@@ -107,3 +107,24 @@ ServicesBoxStyles = {
         "width": "100%"
     }
 }
+
+StdoutBoxStyles = {
+
+    "list": {
+        "border": "1px solid black",
+        "height": "300px"
+    },
+    "stdout_section": {
+        "align-items": "left",
+        "border": "2px solid gray",
+        "padding": "10px",
+        "margin": "10px"
+    },
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.3em",
+        "padding": "5px",
+        "text-align": "left",
+        "width": "100%"
+    }
+}
