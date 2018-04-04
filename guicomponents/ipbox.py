@@ -2,7 +2,7 @@ import remi.gui as gui
 import subprocess
 import urllib.request
 
-from LastRefreshed import LastRefreshed
+from lastrefreshed import LastRefreshed
 from Styles import IPBoxStyles
 
 
