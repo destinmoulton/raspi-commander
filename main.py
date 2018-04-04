@@ -24,11 +24,14 @@ class RaspiCommander(App):
         self.scriptbox = ScriptBox(self.stdoutbox, self.refreshbox.refresh_all)
 
         self.refreshbox.add_button(
-            "Refresh IP Address", self.ipbox.on_refresh_ip)
-        self.refreshbox.add_button("Refresh Scripts",
-                                   self.scriptbox.on_refresh_scripts)
-        self.refreshbox.add_button("Refresh Services",
-                                   self.servicesbox.on_refresh_services)
+            "Refresh IP Address",
+            self.ipbox.on_refresh_ip)
+        self.refreshbox.add_button(
+            "Refresh Scripts",
+            self.scriptbox.on_refresh_scripts)
+        self.refreshbox.add_button(
+            "Refresh Services",
+            self.servicesbox.on_refresh_services)
 
         vbox_main = gui.VBox()
         vbox_main.append(self.refreshbox.build_refresh_box())
@@ -49,7 +52,7 @@ class RaspiCommander(App):
         vbox_left = gui.VBox()
 
         vbox_left.append(self.ipbox.build_ip_box())
-        self.ipbox.refresh_ip()
+        self.ipbox.refresh_ip_box()
 
         vbox_left.append(self.servicesbox.build_services_box())
         self.servicesbox.refresh_service_table()
