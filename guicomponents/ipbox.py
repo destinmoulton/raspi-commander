@@ -9,6 +9,7 @@ from Styles import IPBoxStyles
 
 class IPBox:
     def build_ip_box(self):
+        """Build the External IP Address box from remi components"""
 
         lb_title = gui.Label("External IP Address", style=IPBoxStyles["title"])
 
@@ -25,9 +26,11 @@ class IPBox:
         return vbox_ip_box
 
     def on_refresh_ip(self):
-        self.refresh_ip()
+        self.refresh_ip_box()
 
-    def refresh_ip(self):
+    def refresh_ip_box(self):
+        """Refresh the ip address"""
+
         ip = self._get_external_ip_address()
         self.lb_ip_addr.set_text(ip)
 
@@ -36,6 +39,8 @@ class IPBox:
             self.lastrefreshed.get_last_refreshed())
 
     def _get_external_ip_address(self):
+        """Get the external ip address from a service"""
+
         try:
             return urllib.request.urlopen('https://ident.me', None, 5).read().decode('utf8')
         except:
