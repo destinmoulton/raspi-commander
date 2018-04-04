@@ -1,3 +1,7 @@
+### Raspi Commander
+
+Raspi Commander is a tool to monitor services, external ip address, and to run and execute scripts through a simple web interface. Raspi Commander uses [remi](https://github.com/dddomodossola/remi) to create the web application interface.
+
 ### remi
 
 [dddomodossola/remi: Python REMote Interface library](https://github.com/dddomodossola/remi)
