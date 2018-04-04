@@ -1,11 +1,12 @@
 import remi.gui as gui
 from remi import start, App
 
-from IPBox import IPBox
-from RefreshBox import RefreshBox
-from ScriptBox import ScriptBox
-from ServicesBox import ServicesBox
-from StdoutBox import StdoutBox
+from guicomponents.ipbox import IPBox
+from guicomponents.refreshbox import RefreshBox
+from guicomponents.scriptbox import ScriptBox
+from guicomponents.servicesbox import ServicesBox
+
+from guicomponents.stdoutbox import StdoutBox
 
 from config import IP
 
