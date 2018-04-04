@@ -36,6 +36,6 @@ class IPBox:
 
     def _get_external_ip_address(self):
         try:
-            return urllib.request.urlopen('https://ident.me').read().decode('utf8')
+            return urllib.request.urlopen('https://ident.me', None, 5).read().decode('utf8')
         except:
             return "Unable to find server."
