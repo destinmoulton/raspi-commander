@@ -4,7 +4,7 @@ import subprocess
 
 from config import SERVICES_TO_MONITOR
 
-from lastrefreshed import LastRefreshed
+from guicomponents.lastrefreshed import LastRefreshed
 from SystemCtl import SystemCtl
 from Styles import ServicesBoxStyles
 
