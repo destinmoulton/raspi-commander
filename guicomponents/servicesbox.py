@@ -15,6 +15,8 @@ class ServicesBox:
         self.last_refreshed = LastRefreshed()
 
     def build_services_box(self):
+        """Build the services box from remi components"""
+
         lb_title = gui.Label("Services", style=ServicesBoxStyles["title"])
 
         self.vbox_services_table = gui.TableWidget(
@@ -32,8 +34,8 @@ class ServicesBox:
         return vbox_services_section
 
     def on_refresh_services(self):
-        """When the "Refresh Script List" button is clicked
-        """
+        """When the "Refresh Script List" button is clicked"""
+
         self.refresh_service_table()
 
     def on_click_start_service(self, widget, service):
