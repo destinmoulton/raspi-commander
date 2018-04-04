@@ -15,6 +15,7 @@ class ScriptBox:
         self.refresh_all_handler = refresh_all_handler
 
     def build_script_box(self):
+        """Build the Scripts box/list from remi components"""
 
         lb_title = gui.Label("Scripts", style=ScriptBoxStyles["title"])
 
@@ -41,7 +42,8 @@ class ScriptBox:
         return vbox_script_section
 
     def on_refresh_scripts(self):
-        """When the "Refresh Script List" button is clicked"""
+        """When the 'Refresh Scripts' button is clicked"""
+
         self.refresh_scripts_table()
 
     def on_click_run(self, widget, script):
@@ -90,6 +92,7 @@ class ScriptBox:
 
     def _parse_scripts(self, paths):
         """Parse the script paths"""
+
         scripts = []
         for path in paths:
             filename, ext = os.path.splitext(path)
@@ -108,12 +111,16 @@ class ScriptBox:
         return scripts
 
     def _decode_json_script(self, path):
+        """Decode a json script file"""
+
         f = open(path, mode="r")
         contents = f.read()
         f.close()
         return json.loads(contents)
 
     def _get_script_paths(self):
+        """Scan configured SCIPTS_PATH for files"""
+
         scripts = []
         for subdir, dirs, files in os.walk(SCRIPTS_PATH):
             for file in files:
