@@ -5,7 +5,11 @@ from Styles import StdoutBoxStyles
 class StdoutBox:
     def __init__(self):
         self.stdouts = []
+        self.js = gui.Tag(_type='script')
+        self.js.add_child(
+            "javascript", "function scroll(){console.log('testing!');}")
         self.lst_termout = gui.ListView(style=StdoutBoxStyles["list"])
+        self.lst_termout.add_child("scrolltobottom", self.js)
 
     def append(self, data):
         self.stdouts.append(data)
@@ -25,6 +29,7 @@ class StdoutBox:
         vbox_stdout = gui.VBox(style=StdoutBoxStyles["stdout_section"])
         vbox_stdout.append(hbox_top)
         vbox_stdout.append(self.lst_termout)
+
         return vbox_stdout
 
     def on_click_clear(self, widget):
