@@ -1,6 +1,8 @@
 import remi.gui as gui
 from Styles import StdoutBoxStyles
 
+from stdoutjs import STDOUTJS
+
 
 class StdoutBox:
     def __init__(self):
@@ -8,21 +10,19 @@ class StdoutBox:
         self.jsCounter = 0
 
         self.js = gui.Tag(_type='script')
-        self.js.add_child(
-            "scrollfunction", "function scroll(id){var element = document.getElementById(id); element.scrollTop = element.scrollHeight - element.clientHeight; console.log(id);}")
+        self.js.add_child("STDOUTJS", STDOUTJS)
+
+        self.hidden_stdout = gui.TextInput(
+            single_line=False, id="hidden_stdout")
+        self.hidden_stdout.style["display"] = "none"  # Hide this box
+
         self.lst_termout = gui.ListView(
             style=StdoutBoxStyles["list"], id="stdout")
-
-    def _jsScrollToBottom(self):
-        self.jsCounter = self.jsCounter + 1
-        self.js.add_child("scrollcall{}".format(
-            self.jsCounter), "scroll('stdout');")
 
     def append(self, data):
         self.stdouts.append(data)
         data = data.replace("\n", "<br/>")
         self.lst_termout.append(gui.ListItem(data))
-        self._jsScrollToBottom()
 
     def build_stdout_box(self):
         lb_title = gui.Label("Terminal Output", style=StdoutBoxStyles["title"])
