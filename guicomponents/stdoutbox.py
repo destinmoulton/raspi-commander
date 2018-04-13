@@ -7,13 +7,9 @@ from stdoutjs import STDOUTJS
 class StdoutBox:
     def __init__(self):
         self.stdouts = []
-        self.jsCounter = 0
 
-        self.hidden_stdout = gui.TextInput(
-            single_line=False, id="hidden_stdout")
-        self.hidden_stdout.style["display"] = "none"  # Hide this box
-
-        self.lst_termout = gui.ListView(style=StdoutBoxStyles["list"])
+        self.lst_termout = gui.ListView(
+            style=StdoutBoxStyles["list"], id="stdoutlist")
 
     def append(self, data):
         self.stdouts.append(data)
@@ -37,6 +33,7 @@ class StdoutBox:
         vbox_stdout.append(hbox_top)
         vbox_stdout.append(self.lst_termout)
         vbox_stdout.add_child("scrolltobottom", js)
+
         return vbox_stdout
 
     def on_click_clear(self, widget):
