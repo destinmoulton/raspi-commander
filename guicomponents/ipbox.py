@@ -3,11 +3,14 @@ import subprocess
 import urllib.request
 
 
-from guicomponents.lastrefreshed import LastRefreshed
+from guicomponents.refresh_bar import RefreshBar
 from Styles import IPBoxStyles
 
 
 class IPBox:
+    def __init__(self):
+        self.refresh_bar = RefreshBar(self.on_refresh_ip)
+
     def build_ip_box(self):
         """Build the External IP Address box from remi components"""
 
@@ -15,13 +18,12 @@ class IPBox:
 
         self.lb_ip_addr = gui.Label("", style=IPBoxStyles["ipaddr"])
 
-        self.lastrefreshed = LastRefreshed()
-        self.hbox_last_refreshed = gui.VBox()
+        self.hbox_refresh_bar = self.refresh_bar.build_refresh_bar()
 
         vbox_ip_box = gui.VBox(style=IPBoxStyles["ipbox_box"])
         vbox_ip_box.append(lb_title)
         vbox_ip_box.append(self.lb_ip_addr)
-        vbox_ip_box.append(self.hbox_last_refreshed)
+        vbox_ip_box.append(self.hbox_refresh_bar)
 
         return vbox_ip_box
 
@@ -34,9 +36,7 @@ class IPBox:
         ip = self._get_external_ip_address()
         self.lb_ip_addr.set_text(ip)
 
-        self.hbox_last_refreshed.empty()
-        self.hbox_last_refreshed.append(
-            self.lastrefreshed.get_last_refreshed())
+        self.refresh_bar.update_refresh_time()
 
     def _get_external_ip_address(self):
         """Get the external ip address from a service"""
