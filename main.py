@@ -2,7 +2,7 @@ import remi.gui as gui
 from remi import start, App
 
 from guicomponents.ipbox import IPBox
-from guicomponents.refreshbox import RefreshBox
+from guicomponents.refresh_all_button import RefreshAllButton
 from guicomponents.scriptbox import ScriptBox
 from guicomponents.servicesbox import ServicesBox
 
@@ -18,23 +18,20 @@ class RaspiCommander(App):
     def main(self):
         self.stdoutbox = StdoutBox()
 
-        self.refreshbox = RefreshBox()
+        self.refresh_all_button = RefreshAllButton()
         self.ipbox = IPBox()
         self.servicesbox = ServicesBox(self.stdoutbox)
-        self.scriptbox = ScriptBox(self.stdoutbox, self.refreshbox.refresh_all)
+        self.scriptbox = ScriptBox(
+            self.stdoutbox, self.refresh_all_button.refresh_all)
 
-        self.refreshbox.add_button(
-            "Refresh IP Address",
-            self.ipbox.on_refresh_ip)
-        self.refreshbox.add_button(
-            "Refresh Scripts",
+        self.refresh_all_button.add_refresh_handler(self.ipbox.on_refresh_ip)
+        self.refresh_all_button.add_refresh_handler(
             self.scriptbox.on_refresh_scripts)
-        self.refreshbox.add_button(
-            "Refresh Services",
+        self.refresh_all_button.add_refresh_handler(
             self.servicesbox.on_refresh_services)
 
         vbox_main = gui.VBox()
-        vbox_main.append(self.refreshbox.build_refresh_box())
+        vbox_main.append(self.refresh_all_button.build_refresh_box())
         vbox_main.append(self._build_middle_box())
         vbox_main.append(self.stdoutbox.build_stdout_box())
 
