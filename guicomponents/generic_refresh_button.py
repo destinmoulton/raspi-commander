@@ -1,11 +1,11 @@
 import remi.gui as gui
 
-from Styles import RefreshBoxStyles
+from Styles import ButtonStyles
 
 
 class GenericRefreshButton:
     def build_button(self, title, on_click_handler):
-        bt = gui.Button(title, style=RefreshBoxStyles["refresh_bt_gen"])
+        bt = gui.Button(title, style=ButtonStyles["refresh_bt_gen"])
         # The passed handlers avoid the widget parameter (for callability)
         bt.set_on_click_listener(self._on_click_gen_refresh, on_click_handler)
 
