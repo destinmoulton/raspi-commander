@@ -1,0 +1,13 @@
+# Rename this file to config.py and change the values below.
+
+# The IP address of the Raspberry Pi (or server)
+IP = "127.0.0.1"
+
+# The path where bash scripts and json commands live
+SCRIPTS_PATH = "/path/to/scripts"
+
+# The services you want to monitor
+SERVICES_TO_MONITOR = [
+    'samba',
+    'ssh'
+]
