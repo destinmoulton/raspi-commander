@@ -60,3 +60,7 @@ The format of a JSON file is:
 I setup my "pi" user to have all sudo priveleges. I am not worried about security and prefer the convenience.
 
 The other way would be to grant automatic `sudo` priveleges for only the commands that you want to run remotely.
+
+#### License
+
+Raspi Commander is released under the MIT license.
