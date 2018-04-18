@@ -4,6 +4,7 @@ import subprocess
 
 from config import SERVICES_TO_MONITOR
 
+from guicomponents.generic_refresh_button import GenericRefreshButton
 from guicomponents.lastrefreshed import LastRefreshed
 from SystemCtl import SystemCtl
 from Styles import ServicesBoxStyles
@@ -22,19 +23,27 @@ class ServicesBox:
         self.vbox_services_table = gui.TableWidget(
             0, 3, use_title=False, style=ServicesBoxStyles["table"])
 
-        self.hbox_last_refreshed = gui.VBox()
+        generic_refresh_button = GenericRefreshButton()
+        refresh_button = generic_refresh_button.build_button(
+            "Refresh", self.on_refresh_services)
+
+        self.box_last_refreshed = gui.Widget()
+
+        hbox_refresh_bar = gui.HBox()
+        hbox_refresh_bar.append(refresh_button)
+        hbox_refresh_bar.append(self.box_last_refreshed)
 
         vbox_services_section = gui.VBox(
             width=300, style=ServicesBoxStyles["services_section"])
 
         vbox_services_section.append(lb_title)
         vbox_services_section.append(self.vbox_services_table)
-        vbox_services_section.append(self.hbox_last_refreshed)
+        vbox_services_section.append(hbox_refresh_bar)
 
         return vbox_services_section
 
     def on_refresh_services(self):
-        """When the "Refresh Script List" button is clicked"""
+        """When the "Refresh" button is clicked"""
 
         self.refresh_service_table()
 
@@ -58,8 +67,8 @@ class ServicesBox:
 
     def update_refresh_time(self):
         # Update the refresh time
-        self.hbox_last_refreshed.empty()
-        self.hbox_last_refreshed.append(
+        self.box_last_refreshed.empty()
+        self.box_last_refreshed.append(
             self.last_refreshed.get_last_refreshed())
 
     def refresh_service_table(self):
