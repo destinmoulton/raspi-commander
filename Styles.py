@@ -1,12 +1,13 @@
 
 ButtonStyles = {
     "refresh_bt_gen": {
-        "padding-left": "10px",
-        "padding-right": "10px",
+        "padding-left": "5px",
+        "padding-right": "5px",
         "margin": "5px",
         "border-radius": "3px",
         "background-color": "gray",
-        "font-weight": "bold"
+        "font-weight": "bold",
+        "height": "20px"
     },
     "refresh_bt_all": {
         "padding-left": "10px",
