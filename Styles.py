@@ -1,4 +1,23 @@
 
+ButtonStyles = {
+    "refresh_bt_gen": {
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "margin": "5px",
+        "border-radius": "3px",
+        "background-color": "gray",
+        "font-weight": "bold"
+    },
+    "refresh_bt_all": {
+        "padding-left": "10px",
+        "padding-right": "10px",
+        "margin": "5px",
+        "border-radius": "3px",
+        "background-color": "green",
+        "font-weight": "bold"
+    }
+}
+
 IPBoxStyles = {
     "title": {
         "font-weight": "bold",
@@ -32,22 +51,7 @@ RefreshBoxStyles = {
     "container": {
         "width": "945px"
     },
-    "refresh_bt_gen": {
-        "padding-left": "10px",
-        "padding-right": "10px",
-        "margin": "5px",
-        "border-radius": "3px",
-        "background-color": "gray",
-        "font-weight": "bold"
-    },
-    "refresh_bt_all": {
-        "padding-left": "10px",
-        "padding-right": "10px",
-        "margin": "5px",
-        "border-radius": "3px",
-        "background-color": "green",
-        "font-weight": "bold"
-    },
+
     "title": {
         "font-weight": "bold",
         "font-size": "1.4em"
