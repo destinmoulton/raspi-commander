@@ -71,6 +71,12 @@ TitleBarStyles = {
 }
 
 ScriptBoxStyles = {
+    "container": {
+        "border": "2px solid gray",
+        "padding": "10px",
+        "margin": "10px",
+        "width": "600px"
+    },
     "lastrun_lb_title": {
         "font-weight": "bold"
     },
@@ -85,12 +91,7 @@ ScriptBoxStyles = {
         "background-color": "green",
         "padding": "4px"
     },
-    "script_section": {
-        "border": "2px solid gray",
-        "padding": "10px",
-        "margin": "10px",
-        "width": "600px"
-    },
+
     "table": {
         "width": "100%"
     },
@@ -107,14 +108,15 @@ ScriptBoxStyles = {
 }
 
 ServicesBoxStyles = {
-    "lastrun_lb_title": {
-        "font-weight": "bold"
-    },
     "container": {
         "align-items": "left",
         "border": "2px solid gray",
         "padding": "10px",
-        "margin": "10px"
+        "margin": "10px",
+        "width": "50%"
+    },
+    "lastrun_lb_title": {
+        "font-weight": "bold"
     },
     "start_bt_style": {
         "background-color": "green",

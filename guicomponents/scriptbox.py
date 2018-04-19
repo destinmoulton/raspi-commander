@@ -32,7 +32,7 @@ class ScriptBox:
         self.vbox_scripts_table = gui.TableWidget(
             0, 2, use_title=False, style=ScriptBoxStyles["table"])
 
-        vbox_script_section = gui.VBox(style=ScriptBoxStyles["script_section"])
+        vbox_script_section = gui.VBox(style=ScriptBoxStyles["container"])
         vbox_script_section.style["align-items"] = "left"
 
         vbox_script_section.append(lb_title)
