@@ -50,25 +50,6 @@ LastRefreshedStyles = {
     }
 }
 
-TitleBarStyles = {
-    "container": {
-        "width": "945px",
-    },
-
-    "title": {
-        "font-weight": "bold",
-        "font-size": "1.4em",
-    },
-
-    "left_box": {
-        "justify-content": "left",
-        "width": "50%"
-    },
-
-    "right_box": {
-        "width": "50%"
-    }
-}
 
 ScriptBoxStyles = {
     "container": {
@@ -211,5 +192,25 @@ StdoutBoxStyles = {
         "align-items": "left",
 
         "justify-content": "left"
+    }
+}
+
+TitleBarStyles = {
+    "container": {
+        "width": "945px",
+    },
+
+    "title": {
+        "font-weight": "bold",
+        "font-size": "1.4em",
+    },
+
+    "left_box": {
+        "justify-content": "left",
+        "width": "50%"
+    },
+
+    "right_box": {
+        "width": "50%"
     }
 }
