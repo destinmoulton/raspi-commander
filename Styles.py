@@ -85,16 +85,14 @@ ScriptBoxStyles = {
         "margin": "10px",
         "width": "450px"
     },
-    "lastrun_lb_title": {
-        "font-weight": "bold"
-    },
     "lastrun_hbox_style": {
         "padding-left": "10px",
-        "border-bottom": "2px solid black",
-        "text-align": "left",
-        "width": "90%"
+        "width": "100%",
+        "text-align": "left"
     },
-
+    "lastrun_lb_title": {
+        "font-style": "italic"
+    },
     "run_bt": {
         "background-color": "green",
         "padding": "4px",

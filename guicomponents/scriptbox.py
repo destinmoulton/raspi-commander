@@ -19,12 +19,11 @@ class ScriptBox:
 
         lb_title = gui.Label("Scripts", style=ScriptBoxStyles["title"])
 
-        lb_lastrun_title = gui.Label("Last Script:")
         self.lb_lastrun_script = gui.Label(
-            "", style=ScriptBoxStyles["lastrun_lb_title"])
+            "No script run this session.", style=ScriptBoxStyles["lastrun_lb_title"])
 
         hbox_lastrun = gui.HBox(style=ScriptBoxStyles["lastrun_hbox_style"])
-        hbox_lastrun.append(lb_lastrun_title)
+        hbox_lastrun.style["align-items"] = "left"
         hbox_lastrun.append(self.lb_lastrun_script)
 
         self.vbox_scripts_table = gui.TableWidget(
@@ -60,7 +59,8 @@ class ScriptBox:
         self.refresh_all_handler
 
         # Update the label
-        self.lb_lastrun_script.set_text(script["name"])
+        self.lb_lastrun_script.set_text(
+            "Last script run: {}".format(script["name"]))
 
     def _run_cmd(self, cmd):
         """Run a command"""
