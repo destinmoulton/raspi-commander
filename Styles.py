@@ -91,7 +91,8 @@ ScriptBoxStyles = {
         "background-color": "green",
         "padding": "4px",
         "box-shadow": "none",
-        "height": "25px"
+        "height": "25px",
+        "border-radius": "3px"
     },
 
     "table": {
@@ -125,21 +126,24 @@ ServicesBoxStyles = {
         "padding": "4px",
         "margin": "2px",
         "height": "25px",
-        "box-shadow": "none"
+        "box-shadow": "none",
+        "border-radius": "3px"
     },
     "stop_bt_style": {
         "background-color": "maroon",
         "padding": "4px",
         "margin": "2px",
         "height": "25px",
-        "box-shadow": "none"
+        "box-shadow": "none",
+        "border-radius": "3px"
     },
     "restart_bt_style": {
         "background-color": "orange",
         "padding": "4px",
         "margin": "2px",
         "height": "25px",
-        "box-shadow": "none"
+        "box-shadow": "none",
+        "border-radius": "3px"
     },
     "status_col_style_off": {
         "font-weight": "bold",
