@@ -92,7 +92,8 @@ ScriptBoxStyles = {
         "padding": "4px",
         "box-shadow": "none",
         "height": "25px",
-        "border-radius": "3px"
+        "border-radius": "3px",
+        "font-weight": "bold"
     },
 
     "table": {
@@ -127,7 +128,8 @@ ServicesBoxStyles = {
         "margin": "2px",
         "height": "25px",
         "box-shadow": "none",
-        "border-radius": "3px"
+        "border-radius": "3px",
+        "font-weight": "bold"
     },
     "stop_bt_style": {
         "background-color": "maroon",
@@ -135,7 +137,8 @@ ServicesBoxStyles = {
         "margin": "2px",
         "height": "25px",
         "box-shadow": "none",
-        "border-radius": "3px"
+        "border-radius": "3px",
+        "font-weight": "bold"
     },
     "restart_bt_style": {
         "background-color": "orange",
@@ -143,7 +146,8 @@ ServicesBoxStyles = {
         "margin": "2px",
         "height": "25px",
         "box-shadow": "none",
-        "border-radius": "3px"
+        "border-radius": "3px",
+        "font-weight": "bold"
     },
     "status_col_style_off": {
         "font-weight": "bold",
@@ -160,7 +164,7 @@ ServicesBoxStyles = {
     },
     "table_bt_col": {
         "text-align": "left",
-        "width": "140px"
+        "width": "145px"
     },
     "table_service_col": {
         "text-align": "left",
@@ -177,6 +181,12 @@ ServicesBoxStyles = {
 }
 
 StdoutBoxStyles = {
+    "container": {
+        "align-items": "left",
+        "border": "2px solid gray",
+        "padding": "10px",
+        "width": "945px"
+    },
     "clear_button": {
         "height": "20px",
         "padding-left": "4px",
@@ -188,12 +198,6 @@ StdoutBoxStyles = {
         "border": "1px solid black",
         "height": "300px",
         "width": "95%"
-    },
-    "stdout_section": {
-        "align-items": "left",
-        "border": "2px solid gray",
-        "padding": "10px",
-        "width": "945px"
     },
     "title": {
         "font-weight": "bold",

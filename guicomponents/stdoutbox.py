@@ -29,7 +29,7 @@ class StdoutBox:
         js = gui.Tag(_type='script')
         js.add_child("STDOUTJS", STDOUTJS)
 
-        vbox_stdout = gui.VBox(style=StdoutBoxStyles["stdout_section"])
+        vbox_stdout = gui.VBox(style=StdoutBoxStyles["container"])
         vbox_stdout.append(hbox_top)
         vbox_stdout.append(self.lst_termout)
         vbox_stdout.add_child("scrolltobottom", js)
