@@ -15,7 +15,8 @@ ButtonStyles = {
         "margin": "5px",
         "border-radius": "3px",
         "background-color": "green",
-        "font-weight": "bold"
+        "font-weight": "bold",
+        "float": "right"
     }
 }
 
@@ -50,12 +51,21 @@ LastRefreshedStyles = {
 
 TitleBarStyles = {
     "container": {
-        "width": "945px"
+        "width": "945px",
     },
 
     "title": {
         "font-weight": "bold",
-        "font-size": "1.4em"
+        "font-size": "1.4em",
+    },
+
+    "left_box": {
+        "justify-content": "left",
+        "width": "50%"
+    },
+
+    "right_box": {
+        "width": "50%"
     }
 }
 
