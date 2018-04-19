@@ -11,3 +11,7 @@ SERVICES_TO_MONITOR = [
     'samba',
     'ssh'
 ]
+
+# Time Display Format 
+# Reference: http://strftime.org/
+TIME_FORMAT = "%-I:%M:%S %p -- %b %-d, %Y"
