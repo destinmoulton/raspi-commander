@@ -7,7 +7,7 @@ class TitleBar:
     def __init__(self):
         self.button_handlers = []
 
-        title = gui.Label("RaspiCommander", style=TitleBarStyles["title"])
+        title = gui.Label("Raspi Commander", style=TitleBarStyles["title"])
         bt_refresh_all = gui.Button(
             "Refresh All", style=ButtonStyles["refresh_bt_all"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
