@@ -24,8 +24,6 @@ class ScriptBox:
             "", style=ScriptBoxStyles["lastrun_lb_title"])
 
         hbox_lastrun = gui.HBox(style=ScriptBoxStyles["lastrun_hbox_style"])
-        hbox_lastrun.style["align-items"] = "left"
-
         hbox_lastrun.append(lb_lastrun_title)
         hbox_lastrun.append(self.lb_lastrun_script)
 
@@ -36,8 +34,8 @@ class ScriptBox:
         vbox_script_section.style["align-items"] = "left"
 
         vbox_script_section.append(lb_title)
-        vbox_script_section.append(hbox_lastrun)
         vbox_script_section.append(self.vbox_scripts_table)
+        vbox_script_section.append(hbox_lastrun)
 
         return vbox_script_section
 
