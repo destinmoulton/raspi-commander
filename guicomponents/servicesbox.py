@@ -23,7 +23,7 @@ class ServicesBox:
             0, 3, use_title=False, style=ServicesBoxStyles["table"])
 
         vbox_services_section = gui.VBox(
-            width=300, style=ServicesBoxStyles["services_section"])
+            style=ServicesBoxStyles["container"])
 
         hbox_refresh_bar = self.refresh_bar.build_refresh_bar()
 
