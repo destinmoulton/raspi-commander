@@ -26,7 +26,7 @@ class RaspiCommander(App):
 
         self.title_bar.add_refresh_handler(self.ipbox.on_refresh_ip)
         self.title_bar.add_refresh_handler(
-            self.scriptbox.on_refresh_scripts)
+            self.scriptbox.handle_refresh_scripts)
         self.title_bar.add_refresh_handler(
             self.servicesbox.handle_refresh_services)
 

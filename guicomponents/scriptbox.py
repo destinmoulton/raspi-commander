@@ -41,7 +41,7 @@ class ScriptBox:
 
         return vbox_script_section
 
-    def on_refresh_scripts(self):
+    def handle_refresh_scripts(self):
         """When the 'Refresh Scripts' button is clicked"""
 
         self.refresh_scripts_table()
