@@ -1,9 +1,9 @@
-from datetime import datetime
 import remi.gui as gui
 
 from guicomponents.generic_refresh_button import GenericRefreshButton
 from Styles import LastRefreshedStyles
 from config import TIME_FORMAT
+from helpers import timehelper
 
 
 class RefreshBar:
@@ -33,7 +33,7 @@ class RefreshBar:
 
     def get_last_refreshed(self):
 
-        time = datetime.now().strftime(TIME_FORMAT)
+        time = timehelper.get_now_formatted()
         text = "Last refreshed: {}".format(time)
 
         lb = gui.Label(text, style=LastRefreshedStyles["text"])
