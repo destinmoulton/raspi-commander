@@ -1,15 +1,15 @@
 import remi.gui as gui
 
-from Styles import RefreshBoxStyles, ButtonStyles
+from Styles import TitleBarStyles, ButtonStyles
 
 
-class RefreshAllButton:
+class TitleBar:
     def __init__(self):
         self.button_handlers = []
 
-        self.hbox_top = gui.HBox(style=RefreshBoxStyles["container"])
+        self.hbox_top = gui.HBox(style=TitleBarStyles["container"])
 
-        title = gui.Label("RaspiCommander", style=RefreshBoxStyles["title"])
+        title = gui.Label("RaspiCommander", style=TitleBarStyles["title"])
         bt_refresh_all = gui.Button(
             "Refresh All", style=ButtonStyles["refresh_bt_all"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
@@ -17,7 +17,7 @@ class RefreshAllButton:
         self.hbox_top.append(title)
         self.hbox_top.append(bt_refresh_all)
 
-    def build_refresh_box(self):
+    def build_title_bar(self):
         return self.hbox_top
 
     def add_refresh_handler(self, handler):
