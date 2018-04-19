@@ -75,7 +75,7 @@ ScriptBoxStyles = {
         "border": "2px solid gray",
         "padding": "10px",
         "margin": "10px",
-        "width": "600px"
+        "width": "450px"
     },
     "lastrun_lb_title": {
         "font-weight": "bold"
@@ -89,7 +89,9 @@ ScriptBoxStyles = {
 
     "run_bt": {
         "background-color": "green",
-        "padding": "4px"
+        "padding": "4px",
+        "box-shadow": "none",
+        "height": "25px"
     },
 
     "table": {
@@ -113,7 +115,7 @@ ServicesBoxStyles = {
         "border": "2px solid gray",
         "padding": "10px",
         "margin": "10px",
-        "width": "50%"
+        "width": "450px"
     },
     "lastrun_lb_title": {
         "font-weight": "bold"
@@ -154,11 +156,11 @@ ServicesBoxStyles = {
     },
     "table_bt_col": {
         "text-align": "left",
-        "width": "130px"
+        "width": "140px"
     },
     "table_service_col": {
         "text-align": "left",
-        "width": "130px",
+        "width": "250px",
         "padding-left": "5px"
     },
     "title": {
