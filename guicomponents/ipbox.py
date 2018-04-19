@@ -9,7 +9,7 @@ from Styles import IPBoxStyles
 
 class IPBox:
     def __init__(self):
-        self.refresh_bar = RefreshBar(self.on_refresh_ip)
+        self.refresh_bar = RefreshBar(self.handle_refresh_ip)
 
     def build_ip_box(self):
         """Build the External IP Address box from remi components"""
@@ -27,7 +27,7 @@ class IPBox:
 
         return vbox_ip_box
 
-    def on_refresh_ip(self):
+    def handle_refresh_ip(self):
         self.refresh_ip_box()
 
     def refresh_ip_box(self):

@@ -24,7 +24,7 @@ class RaspiCommander(App):
         self.scriptbox = ScriptBox(
             self.stdoutbox, self.title_bar.refresh_all)
 
-        self.title_bar.add_refresh_handler(self.ipbox.on_refresh_ip)
+        self.title_bar.add_refresh_handler(self.ipbox.handle_refresh_ip)
         self.title_bar.add_refresh_handler(
             self.scriptbox.handle_refresh_scripts)
         self.title_bar.add_refresh_handler(
