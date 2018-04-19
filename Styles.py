@@ -188,7 +188,7 @@ StdoutBoxStyles = {
         "width": "945px"
     },
     "clear_button": {
-        "height": "20px",
+        "height": "25px",
         "padding-left": "4px",
         "padding-right": "4px",
         "border-radius": "4px",
