@@ -19,7 +19,7 @@ class StdoutBox:
     def build_stdout_box(self):
         lb_title = gui.Label("Terminal Output", style=StdoutBoxStyles["title"])
         bt_clear = gui.Button("Clear", style=ButtonStyles["bt_blue"])
-        bt_clear.set_on_click_listener(self.on_click_clear)
+        bt_clear.set_on_click_listener(self.handle_click_clear)
 
         hbox_top = gui.HBox(style=StdoutBoxStyles["top_container"])
         hbox_top.style["justify-content"] = "left"
@@ -36,5 +36,5 @@ class StdoutBox:
 
         return vbox_stdout
 
-    def on_click_clear(self, widget):
+    def handle_click_clear(self, widget):
         self.lst_termout.empty()
