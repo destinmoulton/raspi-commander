@@ -12,7 +12,7 @@ from Styles import ButtonStyles, ServicesBoxStyles
 class ServicesBox:
     def __init__(self, stdoutbox):
         self.systemctl = SystemCtl(stdoutbox)
-        self.refresh_bar = RefreshBar(self.on_refresh_services)
+        self.refresh_bar = RefreshBar(self.handle_refresh_services)
 
     def build_services_box(self):
         """Build the services box from remi components"""
@@ -33,7 +33,7 @@ class ServicesBox:
 
         return vbox_services_section
 
-    def on_refresh_services(self):
+    def handle_refresh_services(self):
         """When the "Refresh" button is clicked"""
 
         self.refresh_service_table()

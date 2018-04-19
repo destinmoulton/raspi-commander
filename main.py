@@ -28,7 +28,7 @@ class RaspiCommander(App):
         self.title_bar.add_refresh_handler(
             self.scriptbox.on_refresh_scripts)
         self.title_bar.add_refresh_handler(
-            self.servicesbox.on_refresh_services)
+            self.servicesbox.handle_refresh_services)
 
         vbox_main = gui.VBox()
         vbox_main.append(self.title_bar.build_title_bar())
