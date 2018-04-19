@@ -6,7 +6,7 @@ from config import SERVICES_TO_MONITOR
 
 from guicomponents.refresh_bar import RefreshBar
 from SystemCtl import SystemCtl
-from Styles import ServicesBoxStyles
+from Styles import ButtonStyles, ServicesBoxStyles
 
 
 class ServicesBox:
@@ -68,16 +68,16 @@ class ServicesBox:
 
         for service_index, (service, status) in enumerate(service_statuses):
             bt_start = gui.Button(
-                "Start", style=ServicesBoxStyles["start_bt_style"])
+                "Start", style=ButtonStyles["bt_green"])
             bt_start.set_on_click_listener(
                 self.on_click_start_service, service)
 
             bt_stop = gui.Button(
-                "Stop", style=ServicesBoxStyles["stop_bt_style"])
+                "Stop", style=ButtonStyles["bt_red"])
             bt_stop.set_on_click_listener(self.on_click_stop_service, service)
 
             bt_restart = gui.Button(
-                "Restart", style=ServicesBoxStyles["restart_bt_style"])
+                "Restart", style=ButtonStyles["bt_orange"])
             bt_restart.set_on_click_listener(
                 self.on_click_restart_service, service)
 

@@ -1,5 +1,5 @@
 import remi.gui as gui
-from Styles import StdoutBoxStyles
+from Styles import ButtonStyles, StdoutBoxStyles
 
 from stdoutjs import STDOUTJS
 
@@ -18,7 +18,7 @@ class StdoutBox:
 
     def build_stdout_box(self):
         lb_title = gui.Label("Terminal Output", style=StdoutBoxStyles["title"])
-        bt_clear = gui.Button("Clear", style=StdoutBoxStyles["clear_button"])
+        bt_clear = gui.Button("Clear", style=ButtonStyles["bt_blue"])
         bt_clear.set_on_click_listener(self.on_click_clear)
 
         hbox_top = gui.HBox(style=StdoutBoxStyles["top_container"])

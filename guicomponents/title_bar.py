@@ -9,7 +9,7 @@ class TitleBar:
 
         title = gui.Label("Raspi Commander", style=TitleBarStyles["title"])
         bt_refresh_all = gui.Button(
-            "Refresh All", style=ButtonStyles["refresh_bt_all"])
+            "Refresh All", style=ButtonStyles["bt_green"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
 
         hbox_left = gui.HBox(style=TitleBarStyles["left_box"])

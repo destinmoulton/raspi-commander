@@ -5,7 +5,7 @@ import subprocess
 from pprint import pprint
 
 from config import SCRIPTS_PATH
-from Styles import ScriptBoxStyles
+from Styles import ButtonStyles, ScriptBoxStyles
 
 
 class ScriptBox:
@@ -80,7 +80,7 @@ class ScriptBox:
         self.vbox_scripts_table.set_row_count(num_rows)
 
         for script_index, script in enumerate(scripts):
-            bt_run = gui.Button("Run", style=ScriptBoxStyles["run_bt"])
+            bt_run = gui.Button("Run", style=ButtonStyles["bt_green"])
             bt_run.set_on_click_listener(self.on_click_run, script)
 
             bt_col = self.vbox_scripts_table.item_at(script_index, 0)

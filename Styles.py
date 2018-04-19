@@ -1,24 +1,51 @@
 
 ButtonStyles = {
-    "refresh_bt_gen": {
-        "padding-left": "5px",
-        "padding-right": "5px",
-        "margin": "5px",
-        "border-radius": "3px",
+    "bt_gray": {
         "background-color": "gray",
-        "font-weight": "bold",
+        "padding": "4px",
+        "margin": "2px",
         "height": "25px",
-        "box-shadow": "none"
-    },
-    "refresh_bt_all": {
-        "padding-left": "10px",
-        "padding-right": "10px",
-        "margin": "5px",
+        "box-shadow": "none",
         "border-radius": "3px",
+        "font-weight": "bold"
+    },
+    "bt_green": {
         "background-color": "green",
-        "font-weight": "bold",
-        "float": "right"
-    }
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none",
+        "border-radius": "3px",
+        "font-weight": "bold"
+    },
+    "bt_red": {
+        "background-color": "maroon",
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none",
+        "border-radius": "3px",
+        "font-weight": "bold"
+    },
+    "bt_orange": {
+        "background-color": "orange",
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none",
+        "border-radius": "3px",
+        "font-weight": "bold"
+    },
+
+    "bt_blue": {
+        "background-color": "rgb(4, 90, 188)",
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none",
+        "border-radius": "3px",
+        "font-weight": "bold"
+    },
 }
 
 IPBoxStyles = {
@@ -103,33 +130,7 @@ ServicesBoxStyles = {
     "lastrun_lb_title": {
         "font-weight": "bold"
     },
-    "start_bt_style": {
-        "background-color": "green",
-        "padding": "4px",
-        "margin": "2px",
-        "height": "25px",
-        "box-shadow": "none",
-        "border-radius": "3px",
-        "font-weight": "bold"
-    },
-    "stop_bt_style": {
-        "background-color": "maroon",
-        "padding": "4px",
-        "margin": "2px",
-        "height": "25px",
-        "box-shadow": "none",
-        "border-radius": "3px",
-        "font-weight": "bold"
-    },
-    "restart_bt_style": {
-        "background-color": "orange",
-        "padding": "4px",
-        "margin": "2px",
-        "height": "25px",
-        "box-shadow": "none",
-        "border-radius": "3px",
-        "font-weight": "bold"
-    },
+
     "status_col_style_off": {
         "font-weight": "bold",
         "padding": "4px",
@@ -167,13 +168,6 @@ StdoutBoxStyles = {
         "border": "2px solid gray",
         "padding": "10px",
         "width": "945px"
-    },
-    "clear_button": {
-        "height": "25px",
-        "padding-left": "4px",
-        "padding-right": "4px",
-        "border-radius": "4px",
-        "line-height": "20px"
     },
     "list": {
         "border": "1px solid black",
