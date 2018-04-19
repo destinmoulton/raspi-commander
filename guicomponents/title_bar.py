@@ -7,15 +7,21 @@ class TitleBar:
     def __init__(self):
         self.button_handlers = []
 
-        self.hbox_top = gui.HBox(style=TitleBarStyles["container"])
-
         title = gui.Label("RaspiCommander", style=TitleBarStyles["title"])
         bt_refresh_all = gui.Button(
             "Refresh All", style=ButtonStyles["refresh_bt_all"])
         bt_refresh_all.set_on_click_listener(self.on_refresh_all)
 
-        self.hbox_top.append(title)
-        self.hbox_top.append(bt_refresh_all)
+        hbox_left = gui.HBox(style=TitleBarStyles["left_box"])
+        hbox_left.style["justify-content"] = "left"
+        hbox_left.append(title)
+
+        hbox_right = gui.HBox(style=TitleBarStyles["right_box"])
+        hbox_right.append(bt_refresh_all)
+
+        self.hbox_top = gui.HBox(style=TitleBarStyles["container"])
+        self.hbox_top.append(hbox_left)
+        self.hbox_top.append(hbox_right)
 
     def build_title_bar(self):
         return self.hbox_top
