@@ -7,7 +7,8 @@ ButtonStyles = {
         "border-radius": "3px",
         "background-color": "gray",
         "font-weight": "bold",
-        "height": "20px"
+        "height": "25px",
+        "box-shadow": "none"
     },
     "refresh_bt_all": {
         "padding-left": "10px",
@@ -109,7 +110,7 @@ ServicesBoxStyles = {
     "lastrun_lb_title": {
         "font-weight": "bold"
     },
-    "services_section": {
+    "container": {
         "align-items": "left",
         "border": "2px solid gray",
         "padding": "10px",
@@ -117,15 +118,24 @@ ServicesBoxStyles = {
     },
     "start_bt_style": {
         "background-color": "green",
-        "padding": "4px"
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none"
     },
     "stop_bt_style": {
-        "background-color": "red",
-        "padding": "4px"
+        "background-color": "maroon",
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none"
     },
     "restart_bt_style": {
         "background-color": "orange",
-        "padding": "4px"
+        "padding": "4px",
+        "margin": "2px",
+        "height": "25px",
+        "box-shadow": "none"
     },
     "status_col_style_off": {
         "font-weight": "bold",
