@@ -48,7 +48,7 @@ LastRefreshedStyles = {
     }
 }
 
-RefreshBoxStyles = {
+TitleBarStyles = {
     "container": {
         "width": "945px"
     },
@@ -57,7 +57,6 @@ RefreshBoxStyles = {
         "font-weight": "bold",
         "font-size": "1.4em"
     }
-
 }
 
 ScriptBoxStyles = {
