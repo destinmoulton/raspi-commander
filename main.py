@@ -30,6 +30,8 @@ class RaspiCommander(App):
         self.title_bar.add_refresh_handler(
             self.servicesbox.handle_refresh_services)
 
+        self.title_bar.add_widget_to_middle(self.ipbox.build_ip_box())
+
         vbox_main = gui.VBox()
         vbox_main.append(self.title_bar.build_title_bar())
         vbox_main.append(self._build_middle_box())
@@ -43,7 +45,6 @@ class RaspiCommander(App):
 
         vbox_left = gui.VBox()
 
-        vbox_left.append(self.ipbox.build_ip_box())
         self.ipbox.refresh_ip_box()
 
         vbox_left.append(self.servicesbox.build_services_box())
