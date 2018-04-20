@@ -14,7 +14,8 @@ class IPBox:
     def build_ip_box(self):
         """Build the External IP Address box from remi components"""
 
-        lb_title = gui.Label("External IP Address", style=IPBoxStyles["title"])
+        lb_title = gui.Label("External IP Address:&nbsp;",
+                             style=IPBoxStyles["title"])
 
         self.lb_ip_addr = gui.Label("", style=IPBoxStyles["ipaddr"])
 
