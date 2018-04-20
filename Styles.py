@@ -52,7 +52,6 @@ IPBoxStyles = {
     "title": {
         "font-weight": "bold",
         "font-size": "1em",
-        "padding": "5px",
         "text-align": "left"
     },
     "ipaddr": {
@@ -79,8 +78,7 @@ LastRefreshedStyles = {
 
 MainStyles = {
     "middle_container": {
-        "margin": "20px",
-        "align-items": "left"
+        "margin": "10px"
     }
 }
 
