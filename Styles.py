@@ -77,6 +77,12 @@ LastRefreshedStyles = {
     }
 }
 
+MainStyles = {
+    "middle_container": {
+        "margin": "20px",
+        "align-items": "left"
+    }
+}
 
 ScriptBoxStyles = {
     "container": {

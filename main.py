@@ -5,10 +5,10 @@ from guicomponents.ipbox import IPBox
 from guicomponents.title_bar import TitleBar
 from guicomponents.scriptbox import ScriptBox
 from guicomponents.servicesbox import ServicesBox
-
 from guicomponents.stdoutbox import StdoutBox
 
 from config import IP
+from Styles import MainStyles
 
 
 class RaspiCommander(App):
@@ -39,12 +39,7 @@ class RaspiCommander(App):
 
     def _build_middle_box(self):
 
-        middle_style = {
-            "margin": "20px",
-            "align-items": "left"
-
-        }
-        middle_container = gui.HBox(style=middle_style)
+        middle_container = gui.HBox(style=MainStyles['middle_container'])
 
         vbox_left = gui.VBox()
 
