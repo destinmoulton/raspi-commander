@@ -205,10 +205,14 @@ TitleBarStyles = {
 
     "left_box": {
         "justify-content": "left",
-        "width": "50%"
+        "width": "33%"
+    },
+
+    "middle_box": {
+        "width": "33%"
     },
 
     "right_box": {
-        "width": "50%"
+        "width": "33%"
     }
 }
