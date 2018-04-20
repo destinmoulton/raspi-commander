@@ -18,11 +18,14 @@ class IPBox:
 
         self.lb_ip_addr = gui.Label("", style=IPBoxStyles["ipaddr"])
 
+        hbox_title = gui.HBox()
+        hbox_title.append(lb_title, self.lb_ip_addr)
+        hbox_title.append(self.lb_ip_addr)
+
         self.hbox_refresh_bar = self.refresh_bar.build_refresh_bar()
 
         vbox_ip_box = gui.VBox(style=IPBoxStyles["ipbox_box"])
-        vbox_ip_box.append(lb_title)
-        vbox_ip_box.append(self.lb_ip_addr)
+        vbox_ip_box.append(hbox_title)
         vbox_ip_box.append(self.hbox_refresh_bar)
 
         return vbox_ip_box

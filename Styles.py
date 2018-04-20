@@ -51,9 +51,8 @@ ButtonStyles = {
 IPBoxStyles = {
     "title": {
         "font-weight": "bold",
-        "font-size": "1.3em",
+        "font-size": "1em",
         "padding": "5px",
-        "width": "100%",
         "text-align": "left"
     },
     "ipaddr": {
@@ -61,9 +60,10 @@ IPBoxStyles = {
         "color": "purple"
     },
     "ipbox_box": {
-        "border": "2px solid gray",
-        "padding": "10px",
-        "margin": "10px",
+        "border-left": "2px solid gray",
+        "border-right": "2px solid gray",
+        "border-bottom": "2px solid gray",
+        "padding": "4px",
         "width": "300px",
         "text-align": "left",
         "align-items": "left"
