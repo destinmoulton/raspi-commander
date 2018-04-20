@@ -7,7 +7,7 @@ from guicomponents.scriptbox import ScriptBox
 from guicomponents.servicesbox import ServicesBox
 from guicomponents.stdoutbox import StdoutBox
 
-from config import IP
+from config import IP, PORT
 from Styles import MainStyles
 
 
@@ -58,10 +58,10 @@ class RaspiCommander(App):
         return middle_container
 
 
-
-# starts the webserver
-start(RaspiCommander,
-      address=IP,
-      port=9090,
-      enable_file_cache=False,
-      update_interval=0.1)
+if __name__ == "__main__":
+    # Starts the remi web server
+    start(RaspiCommander,
+          address=IP,
+          port=PORT,
+          enable_file_cache=False,
+          update_interval=0.1)
