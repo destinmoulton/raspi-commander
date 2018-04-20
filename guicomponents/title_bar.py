@@ -16,15 +16,21 @@ class TitleBar:
         hbox_left.style["justify-content"] = "left"
         hbox_left.append(title)
 
+        self.hbox_middle = gui.HBox(style=TitleBarStyles["middle_box"])
+
         hbox_right = gui.HBox(style=TitleBarStyles["right_box"])
         hbox_right.append(bt_refresh_all)
 
         self.hbox_top = gui.HBox(style=TitleBarStyles["container"])
         self.hbox_top.append(hbox_left)
+        self.hbox_top.append(self.hbox_middle)
         self.hbox_top.append(hbox_right)
 
     def build_title_bar(self):
         return self.hbox_top
+
+    def add_widget_to_middle(self, widget):
+        self.hbox_middle.append(widget)
 
     def add_refresh_handler(self, handler):
         self.button_handlers.append(handler)
