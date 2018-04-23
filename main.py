@@ -8,7 +8,7 @@ from guicomponents.scriptbox import ScriptBox
 from guicomponents.servicesbox import ServicesBox
 from guicomponents.stdoutbox import StdoutBox
 
-from config import IP, PORT
+from config import IP, PORT, JS_FILES
 from Styles import MainStyles
 
 
@@ -39,6 +39,12 @@ class RaspiCommander(App):
         vbox_main.append(self.title_bar.build_title_bar())
         vbox_main.append(self._build_middle_box())
         vbox_main.append(self.stdoutbox.build_stdout_box())
+
+        for js_file in JS_FILES:
+            # Add the javascript scripts to the end
+            js = gui.Tag(_type='script')
+            js.attributes["src"] = "/res/{}".format(js_file)
+            vbox_main.add_child(js_file, js)
 
         return vbox_main
 
