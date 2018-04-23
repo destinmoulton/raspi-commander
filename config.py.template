@@ -16,3 +16,9 @@ SERVICES_TO_MONITOR = [
 # Time Display Format 
 # Reference: http://strftime.org/
 TIME_FORMAT = "%-I:%M:%S %p -- %b %-d, %Y"
+
+# Javascript files to include
+# These should be held in the "/res" folder
+JS_FILES = [
+    "raspicommander.js"
+]
