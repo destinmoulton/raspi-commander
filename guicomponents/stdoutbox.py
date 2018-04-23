@@ -1,8 +1,6 @@
 import remi.gui as gui
 from Styles import ButtonStyles, StdoutBoxStyles
 
-from stdoutjs import STDOUTJS
-
 
 class StdoutBox:
     def __init__(self):
@@ -26,13 +24,9 @@ class StdoutBox:
         hbox_top.append(lb_title)
         hbox_top.append(bt_clear)
 
-        js = gui.Tag(_type='script')
-        js.add_child("STDOUTJS", STDOUTJS)
-
         vbox_stdout = gui.VBox(style=StdoutBoxStyles["container"])
         vbox_stdout.append(hbox_top)
         vbox_stdout.append(self.lst_termout)
-        vbox_stdout.add_child("scrolltobottom", js)
 
         return vbox_stdout
 
