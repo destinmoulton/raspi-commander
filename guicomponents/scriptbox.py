@@ -39,11 +39,6 @@ class ScriptBox:
 
         return vbox_script_section
 
-    def handle_refresh_scripts(self):
-        """When the 'Refresh Scripts' button is clicked"""
-
-        self.refresh_scripts_table()
-
     def on_click_run(self, widget, script):
         """When a script in the table is clicked"""
 
@@ -81,6 +76,7 @@ class ScriptBox:
 
         for script_index, script in enumerate(scripts):
             bt_run = gui.Button("Run", style=ButtonStyles["bt_green"])
+            bt_run.attributes["class"] = "script-run-button"
             bt_run.set_on_click_listener(self.on_click_run, script)
 
             bt_col = self.vbox_scripts_table.item_at(script_index, 0)
