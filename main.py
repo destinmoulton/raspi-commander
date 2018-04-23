@@ -1,3 +1,4 @@
+import os
 import remi.gui as gui
 from remi import start, App
 
@@ -13,7 +14,9 @@ from Styles import MainStyles
 
 class RaspiCommander(App):
     def __init__(self, *args):
-        super(RaspiCommander, self).__init__(*args)
+        static_path = os.path.join(os.path.dirname(__file__), 'res')
+        super(RaspiCommander, self).__init__(
+            *args, static_file_path=static_path)
 
     def main(self):
         self.stdoutbox = StdoutBox()
