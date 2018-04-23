@@ -4,13 +4,13 @@
     let currentCount = 0;
 
     window.onload = function() {
-        console.log("RUNNING!");
         addCSS("res/raspicommander.css");
         addModalElement();
-        toggleLoadingModal(true);
+
+        addScriptButtonListeners();
         setInterval(function() {
             // Check whether the scroll needs to change
-            shouldScroll();
+            hasSTDOUTChanged();
         }, 100);
     };
 
@@ -30,6 +30,18 @@
         document.body.setAttribute("class", className);
     }
 
+    function addScriptButtonListeners() {
+        const buttons = document.getElementsByClassName("script-run-button");
+        for (let button of buttons) {
+            button.addEventListener("click", handleScriptButtonClick);
+        }
+    }
+
+    function handleScriptButtonClick(evt) {
+        // Show the loading modal
+        toggleLoadingModal(true);
+    }
+
     function addCSS(fileName) {
         const css = document.createElement("link");
         css.setAttribute("rel", "stylesheet");
@@ -39,13 +51,16 @@
         document.head.appendChild(css);
     }
 
-    function shouldScroll() {
+    function hasSTDOUTChanged() {
         const el = document.getElementById("stdoutlist");
         const count = el.children.length;
         if (count !== currentCount) {
             // The number of children changed, so scroll
             currentCount = count;
             scroll(el);
+
+            // Close the loading modal
+            toggleLoadingModal(false);
         }
     }
 
