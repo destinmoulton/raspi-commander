@@ -42,6 +42,7 @@ class RaspiCommander(App):
     def _build_middle_box(self):
 
         middle_container = gui.HBox(style=MainStyles['middle_container'])
+        middle_container.style["align-items"] = "stretch"
 
         vbox_left = gui.VBox()
 
