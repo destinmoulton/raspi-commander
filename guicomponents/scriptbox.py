@@ -25,14 +25,13 @@ class ScriptBox:
             "No script run this session.", style=ScriptBoxStyles["lastrun_lb_title"])
 
         hbox_lastrun = gui.HBox(style=ScriptBoxStyles["lastrun_hbox_style"])
-        hbox_lastrun.style["align-items"] = "left"
+
         hbox_lastrun.append(self.lb_lastrun_script)
 
         self.vbox_scripts_table = gui.TableWidget(
             0, 2, use_title=False, style=ScriptBoxStyles["table"])
 
         vbox_script_section = gui.VBox(style=ScriptBoxStyles["container"])
-        vbox_script_section.style["align-items"] = "left"
 
         vbox_script_section.append(lb_title)
         vbox_script_section.append(self.vbox_scripts_table)

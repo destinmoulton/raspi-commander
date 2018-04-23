@@ -65,7 +65,6 @@ IPBoxStyles = {
         "padding": "4px",
         "width": "300px",
         "text-align": "left",
-        "align-items": "left"
     },
 }
 
@@ -123,7 +122,6 @@ ScriptBoxStyles = {
 
 ServicesBoxStyles = {
     "container": {
-        "align-items": "left",
         "border": "2px solid gray",
         "padding": "10px",
         "margin": "10px",
@@ -166,7 +164,6 @@ ServicesBoxStyles = {
 
 StdoutBoxStyles = {
     "container": {
-        "align-items": "left",
         "border": "2px solid gray",
         "padding": "10px",
         "width": "945px"
@@ -185,8 +182,6 @@ StdoutBoxStyles = {
     "top_container": {
         "width": "900px",
         "text-align": "left",
-        "align-items": "left",
-
         "justify-content": "left"
     }
 }
