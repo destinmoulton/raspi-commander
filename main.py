@@ -51,14 +51,10 @@ class RaspiCommander(App):
         middle_container = gui.HBox(style=MainStyles['middle_container'])
         middle_container.style["align-items"] = "stretch"
 
-        vbox_left = gui.VBox()
-
         self.ipbox.refresh_ip_box()
 
-        vbox_left.append(self.servicesbox.build_services_box())
+        middle_container.append(self.servicesbox.build_services_box())
         self.servicesbox.refresh_service_table()
-
-        middle_container.append(vbox_left)
 
         middle_container.append(self.scriptbox.build_script_box())
         self.scriptbox.refresh_scripts_table()
