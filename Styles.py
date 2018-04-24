@@ -146,11 +146,11 @@ ServicesBoxStyles = {
     },
     "table_bt_col": {
         "text-align": "left",
-        "width": "145px"
+        "width": "150px"
     },
     "table_service_col": {
         "text-align": "left",
-        "width": "250px",
+        "width": "240px",
         "padding-left": "5px"
     },
     "title": {
