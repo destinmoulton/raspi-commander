@@ -43,8 +43,8 @@ Place your scripts in the folder configured in `SCRIPTS_PATH` in `config.py`.
 
 You can run two different types of scripts.
 
-*   Bash Scripts
-*   JSON files that contain a `python list` of commands to run
+-   Bash Scripts
+-   JSON files that contain a `python list` of commands to run
 
 The format of a JSON file is:
 
@@ -63,4 +63,4 @@ The other way would be to grant automatic `sudo` priveleges for only the command
 
 #### License
 
-Raspi Commander is released under the MIT license.
+MIT
