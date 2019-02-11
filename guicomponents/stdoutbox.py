@@ -11,7 +11,7 @@ class StdoutBox:
 
     def append(self, data):
         self.stdouts.append(data)
-        data = data.replace("\n", "<br/>")
+        # data = data.replace("\n", "<br/>")
         self.lst_termout.append(gui.ListItem(data))
 
     def build_stdout_box(self):
