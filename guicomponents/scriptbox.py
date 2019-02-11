@@ -57,7 +57,7 @@ class ScriptBox:
         now = timehelper.get_now_formatted()
         # Update the label
         self.lb_lastrun_script.set_text(
-            "<strong>Last run:</strong> {} at {}".format(script["name"], now))
+            "Last run: `{}` at {}".format(script["name"], now))
 
     def _run_cmd(self, cmd):
         """Run a command"""
