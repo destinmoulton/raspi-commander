@@ -52,7 +52,8 @@ IPBoxStyles = {
     "title": {
         "font-weight": "bold",
         "font-size": "1em",
-        "text-align": "left"
+        "text-align": "left",
+        "padding-right": "4px"
     },
     "ipaddr": {
         "font-weight": "bold",
